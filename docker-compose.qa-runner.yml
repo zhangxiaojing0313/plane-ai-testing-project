@@ -1,0 +1,47 @@
+# docker-compose.qa-runner.yml
+#
+# Launches a Plane QA Runner Jenkins inbound agent.
+# All secrets are passed as environment variables — never hardcoded.
+#
+# Usage:
+#   export JENKINS_URL=http://host.docker.internal:8081
+#   export JENKINS_AGENT_NAME=plane-qa-runner
+#   export JENKINS_AGENT_SECRET=<secret-from-jenkins-ui>
+#   export JENKINS_WEB_SOCKET=true
+#   export DOCKER_GID=$(getent group docker | cut -d: -f3)
+#   docker compose -f docker-compose.qa-runner.yml up -d
+#
+services:
+  plane-qa-runner:
+    image: plane-qa-runner:day4
+    container_name: plane-qa-runner-agent
+    user: jenkins
+    environment:
+      - JENKINS_URL=${JENKINS_URL:-http://host.docker.internal:8081}
+      - JENKINS_AGENT_NAME=${JENKINS_AGENT_NAME:-plane-qa-runner}
+      - JENKINS_SECRET=${JENKINS_AGENT_SECRET}
+      - JENKINS_WEB_SOCKET=${JENKINS_WEB_SOCKET:-true}
+      - JENKINS_AGENT_WORKDIR=/home/jenkins/agent
+      - QA_VENV=/home/jenkins/qa-venv
+    volumes:
+      # Docker socket for docker exec to Plane DB
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Project source (read-only — copied to workspace at build time)
+      - /home/tester/qa-workspace/plane-ai-testing-project:/opt/plane-source:ro
+      # Agent workspace (persistent across agent restarts)
+      - qa-runner-workspace:/home/jenkins/agent
+    group_add:
+      - "${DOCKER_GID}"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    deploy:
+      resources:
+        limits:
+          cpus: "1.5"
+          memory: "2.5g"
+    restart: "no"
+    # Do NOT use privileged:true
+    # Do NOT use host network unless bridge is confirmed broken
+
+volumes:
+  qa-runner-workspace:

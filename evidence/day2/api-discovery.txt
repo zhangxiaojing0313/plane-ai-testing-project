@@ -1,0 +1,671 @@
+================================================================================
+Plane AI Testing Project - Day 2 Phase 2: API Discovery Evidence
+================================================================================
+
+Execution Time: 2026-07-13T00:32:35+00:00
+Plane Version: Plane Community Edition v1.3.1
+Host: qa-linux
+User: tester
+Project Dir: /home/tester/qa-workspace/plane-ai-testing-project
+
+================================================================================
+1. DEPLOYMENT & SERVICE CONFIRMATION
+================================================================================
+
+Compose Project: plane-app (status: running, 12 containers)
+Compose File: /home/tester/qa-workspace/plane-selfhost/plane-app/docker-compose.yaml
+
+Container Name                 Image                               Status           Ports
+plane-app-proxy-1              makeplane/plane-proxy:v1.3.1        Up              0.0.0.0:8090->80/tcp, 0.0.0.0:8443->443/tcp
+plane-app-web-1                makeplane/plane-frontend:v1.3.1     Up (healthy)
+plane-app-api-1                makeplane/plane-backend:v1.3.1      Up
+plane-app-worker-1             makeplane/plane-backend:v1.3.1      Up
+plane-app-beat-worker-1        makeplane/plane-backend:v1.3.1      Up
+plane-app-space-1              makeplane/plane-space:v1.3.1        Up (healthy)
+plane-app-admin-1              makeplane/plane-admin:v1.3.1        Up (healthy)
+plane-app-live-1               makeplane/plane-live:v1.3.1         Up
+plane-app-plane-db-1           postgres:15.7-alpine                Up              5432/tcp
+plane-app-plane-mq-1           rabbitmq:3.13.6-management-alpine   Up              5671-5672/tcp
+plane-app-plane-minio-1        minio/minio:latest                  Up              9000/tcp
+plane-app-plane-redis-1        valkey/valkey:7.2.11-alpine         Up              6379/tcp
+
+================================================================================
+2. API & PROXY SERVICE CONFIRMATION
+================================================================================
+
+Proxy: Caddy (makeplane/plane-proxy:v1.3.1)
+  - External: Port 8090 -> internal 80 (HTTP)
+  - External: Port 8443 -> internal 443 (HTTPS)
+  - Config: /etc/caddy/Caddyfile
+
+API Backend: Django + Gunicorn + UvicornWorker
+  - Image: makeplane/plane-backend:v1.3.1
+  - Internal Port: 8000
+  - Server: uvicorn
+
+Web Frontend: Nginx
+  - Image: makeplane/plane-frontend:v1.3.1
+  - Internal Port: 3000
+
+Caddy Routing Rules (from /etc/caddy/Caddyfile):
+  - /spaces/*       -> space:3000
+  - /god-mode/*     -> admin:3000
+  - /live/*         -> live:3000
+  - /api/*          -> api:8000
+  - /auth/*         -> api:8000
+  - /static/*       -> api:8000
+  - /{BUCKET}/*     -> plane-minio:9000
+  - /*              -> web:3000 (catch-all SPA)
+
+================================================================================
+3. API BASE PATH & URL STRUCTURE
+================================================================================
+
+Root URL Configuration (from /code/plane/urls.py):
+  api/          -> plane.app.urls       (main application API)
+  api/public/   -> plane.space.urls     (public/space API)
+  api/instances/ -> plane.license.urls  (instance/license API)
+  api/v1/       -> plane.api.urls       (public API v1 - API Key based)
+  auth/         -> plane.authentication.urls (authentication)
+  ""            -> plane.web.urls       (web frontend)
+
+API Base Path: http://192.168.146.132:8090/api/
+
+App URL Modules (within api/):
+  analytic, api (tokens), asset, cycle, estimate, external,
+  intake, issue, module, notification, page, project,
+  search, state, user, views, workspace, webhook, timezone, exporter
+
+API v1 URL Modules (within api/v1/):
+  asset, cycle, intake, label, member, module, project,
+  state, user, work_item, invite, sticky
+
+Schema Endpoints (disabled by default - ENABLE_DRF_SPECTACULAR):
+  api/schema/            (SpectacularAPIView)
+  api/schema/swagger-ui/ (Swagger UI)
+  api/schema/redoc/      (ReDoc)
+
+================================================================================
+4. HTTP PROBING RESULTS
+================================================================================
+
+Target: http://192.168.146.132:8090
+
+Path                        Method  Status  Notes
+/                           GET     200     Plane SPA (index.html)
+/api/                       GET     404     No API root listing
+/api/v1/                    GET     404     No API v1 root listing
+/api/docs                   GET     404     No docs page
+/api/schema                 GET     404     Disabled (ENABLE_DRF_SPECTACULAR)
+/api/openapi.json           GET     404     Not configured
+/openapi.json               GET     200     SPA catch-all (returns HTML, not JSON)
+/swagger                    GET     200     SPA catch-all (returns HTML)
+/swagger.json               GET     200     SPA catch-all (returns HTML)
+/redoc                      GET     200     SPA catch-all (returns HTML)
+/spaces/                    GET     200     Plane Spaces app
+/god-mode/                  GET     200     Plane Admin app
+/live/                      GET     404     Live service
+/api/instances/             GET     200     PUBLIC (no auth required)
+/api/instances/             OPTIONS 200     Allow: GET, PATCH, HEAD, OPTIONS
+/api/users/me/              GET     401     Auth required
+/api/workspaces/            GET     401     Auth required
+/auth/get-csrf-token/       GET     200     PUBLIC (returns CSRF token)
+
+/api/instances/ Response Structure (unauthenticated, confirmed):
+{
+    "config": {
+        "enable_signup": bool,
+        "is_workspace_creation_disabled": bool,
+        "is_google_enabled": bool,
+        "is_github_enabled": bool,
+        "is_gitlab_enabled": bool,
+        "is_gitea_enabled": bool,
+        "is_magic_login_enabled": bool,
+        "is_email_password_enabled": bool,
+        "github_app_name": str,
+        "slack_client_id": null,
+        "posthog_api_key": null,
+        "posthog_host": null,
+        "has_unsplash_configured": bool,
+        "has_llm_configured": bool,
+        "file_size_limit": float,
+        "is_smtp_configured": bool,
+        "admin_base_url": null,
+        "space_base_url": null,
+        "app_base_url": null,
+        "instance_changelog_url": str,
+        "is_self_managed": bool
+    },
+    "instance": {
+        "id": uuid,
+        "created_at": datetime,
+        "updated_at": datetime,
+        "instance_name": str,
+        "instance_id": str,
+        "current_version": str,
+        "latest_version": str,
+        "edition": str (PLANE_COMMUNITY),
+        ...
+    }
+}
+
+================================================================================
+5. API LOG DISCOVERIES (from API container logs)
+================================================================================
+
+Log source: docker logs plane-app-api-1
+Time range: 2026-07-12 12:21:20 - 12:58:11 UTC
+Log format: JSON, module=logger, name=plane.api.request
+Workspace: qa-lab
+Project: 0c1cf73f-2d88-430b-812b-2e1c7f010c3c
+
+Confirmed endpoints from logs (de-duplicated, notifications/unread polling excluded):
+
+=== Instance (no auth) ===
+GET  /api/instances/                       200  (public)
+GET  /api/instances/admins/                401  (unauth) / 200 (auth)
+GET  /api/instances/admins/me/             401  (unauth) / 200 (auth)
+POST /api/instances/admins/sign-up/        302  (redirect after signup)
+
+=== Authentication ===
+GET  /auth/get-csrf-token/                 200  (public)
+POST /auth/email-check/                    200  (public)
+POST /auth/sign-in/                        302  (redirect after login)
+
+=== User ===
+GET  /api/users/me/                        401  (unauth) / 200 (auth)
+PATCH /api/users/me/                       200
+GET  /api/users/me/profile/                200
+PATCH /api/users/me/profile/               200
+GET  /api/users/me/settings/               200
+PATCH /api/users/me/onboard/               200
+PATCH /api/users/me/tour-completed/        200
+GET  /api/users/me/workspaces/             200
+GET  /api/users/me/workspaces/invitations/ 200
+GET  /api/users/me/workspaces/qa-lab/project-roles/ 200
+
+=== Workspace ===
+GET  /api/workspace-slug-check/?slug=<slug>   200
+POST /api/workspaces/                          201
+GET  /api/workspaces/<slug>/members/           200
+GET  /api/workspaces/<slug>/workspace-members/me/ 200
+GET  /api/workspaces/<slug>/states/            200
+GET  /api/workspaces/<slug>/projects/          200
+GET  /api/workspaces/<slug>/projects/details/  200
+GET  /api/workspaces/<slug>/sidebar-preferences/ 200
+GET  /api/workspaces/<slug>/user-properties/   200
+GET  /api/workspaces/<slug>/user-favorites/    200
+GET  /api/workspaces/<slug>/home-preferences/  200
+GET  /api/workspaces/<slug>/stickies/          200
+GET  /api/workspaces/<slug>/recent-visits/     200
+GET  /api/workspaces/<slug>/quick-links/       200
+GET  /api/workspaces/<slug>/modules/           200
+
+=== Project ===
+POST /api/workspaces/<slug>/projects/                                  201
+GET  /api/workspaces/<slug>/projects/<project_id>/                     200
+PATCH /api/workspaces/<slug>/projects/<project_id>/                    200
+GET  /api/workspaces/<slug>/projects/<project_id>/states/              200
+GET  /api/workspaces/<slug>/projects/<project_id>/members/             200
+GET  /api/workspaces/<slug>/projects/<project_id>/issue-labels/        200
+GET  /api/workspaces/<slug>/projects/<project_id>/project-members/me/  200
+GET  /api/workspaces/<slug>/projects/<project_id>/intake-state/        200
+GET  /api/workspaces/<slug>/projects/<project_id>/estimates/           200
+GET  /api/workspaces/<slug>/projects/<project_id>/cycles/              200
+GET  /api/workspaces/<slug>/projects/<project_id>/modules/             200
+GET  /api/workspaces/<slug>/projects/<project_id>/views/               200
+GET  /api/workspaces/<slug>/projects/<project_id>/user-properties/     200
+
+=== Issues (Work Items) ===
+GET  /api/workspaces/<slug>/projects/<project_id>/issues/
+     Query params: order_by, sub_issue, filters, layout, cursor, per_page
+     Status: 200
+POST /api/workspaces/<slug>/projects/<project_id>/issues/
+     Status: 201
+
+=== Assets ===
+POST  /api/assets/v2/workspaces/<slug>/                          200
+PATCH /api/assets/v2/workspaces/<slug>/<asset_id>/               204
+POST  /api/assets/v2/workspaces/<slug>/projects/<pid>/<pid>/bulk/ 204
+GET   /api/assets/v2/static/<asset_id>/                          302
+
+=== Misc ===
+GET /api/unsplash/?query=  200
+
+================================================================================
+6. FRONTEND RESOURCE DISCOVERIES
+================================================================================
+
+Additional API paths found in JS bundles (/usr/share/nginx/html/assets/*.js)
+NOT yet confirmed by logs:
+
+/api/assets/v2/user-assets/
+/api/integrations/
+/api/release-notes/
+/api/timezones/
+/api/users/api-tokens/           (API token management)
+/api/users/last-visited-workspace/
+/api/users/me/accounts/
+/api/users/me/activities/
+/api/users/me/email/
+/api/users/me/email/generate-code/
+/api/users/me/instance-admin/
+/api/users/me/notification-preferences/
+/api/workspaces/
+
+================================================================================
+7. DJANGO URL PATTERNS (source of truth from urls.py files)
+================================================================================
+
+The following URL patterns are confirmed from Django URL configuration files.
+They represent ALL available endpoints. Only a subset has been confirmed
+via logs or HTTP probes.
+
+=== Workspaces (workspace.py) ===
+GET    /api/workspace-slug-check/
+GET    /api/workspaces/
+POST   /api/workspaces/
+GET    /api/workspaces/<slug>/
+PUT    /api/workspaces/<slug>/
+PATCH  /api/workspaces/<slug>/
+DELETE /api/workspaces/<slug>/
+GET    /api/workspaces/<slug>/invitations/
+POST   /api/workspaces/<slug>/invitations/
+GET    /api/workspaces/<slug>/invitations/<uuid>/
+DELETE /api/workspaces/<slug>/invitations/<uuid>/
+PATCH  /api/workspaces/<slug>/invitations/<uuid>/
+GET    /api/users/me/workspaces/invitations/
+POST   /api/users/me/workspaces/invitations/
+GET    /api/workspaces/<slug>/members/
+POST   /api/workspaces/<slug>/members/
+GET    /api/workspaces/<slug>/members/<uuid>/
+PUT    /api/workspaces/<slug>/members/<uuid>/
+PATCH  /api/workspaces/<slug>/members/<uuid>/
+DELETE /api/workspaces/<slug>/members/<uuid>/
+GET    /api/workspaces/<slug>/workspace-members/me/
+GET    /api/workspaces/<slug>/states/
+GET    /api/workspaces/<slug>/labels/
+GET    /api/workspaces/<slug>/user-properties/
+GET    /api/workspaces/<slug>/modules/
+GET    /api/workspaces/<slug>/cycles/
+GET    /api/workspaces/<slug>/estimates/
+GET    /api/workspaces/<slug>/sidebar-preferences/
+GET    /api/workspaces/<slug>/home-preferences/
+GET    /api/workspaces/<slug>/user-favorites/
+GET    /api/workspaces/<slug>/stickies/
+GET    /api/workspaces/<slug>/recent-visits/
+GET    /api/workspaces/<slug>/quick-links/
+
+=== Projects (project.py) ===
+GET    /api/workspaces/<slug>/projects/
+POST   /api/workspaces/<slug>/projects/
+GET    /api/workspaces/<slug>/projects/<uuid>/
+PUT    /api/workspaces/<slug>/projects/<uuid>/
+PATCH  /api/workspaces/<slug>/projects/<uuid>/
+DELETE /api/workspaces/<slug>/projects/<uuid>/
+GET    /api/workspaces/<slug>/projects/details/
+GET    /api/workspaces/<slug>/projects/<uuid>/members/
+POST   /api/workspaces/<slug>/projects/<uuid>/members/
+GET    /api/workspaces/<slug>/projects/<uuid>/members/<uuid>/
+PUT    /api/workspaces/<slug>/projects/<uuid>/members/<uuid>/
+DELETE /api/workspaces/<slug>/projects/<uuid>/members/<uuid>/
+GET    /api/workspaces/<slug>/projects/<uuid>/project-members/me/
+GET    /api/workspaces/<slug>/projects/<uuid>/invitations/
+POST   /api/workspaces/<slug>/projects/<uuid>/invitations/
+GET    /api/workspaces/<slug>/projects/<uuid>/invitations/<uuid>/
+DELETE /api/workspaces/<slug>/projects/<uuid>/invitations/<uuid>/
+GET    /api/workspaces/<slug>/projects/<uuid>/user-favorites/
+POST   /api/workspaces/<slug>/projects/<uuid>/user-favorites/
+DELETE /api/workspaces/<slug>/projects/<uuid>/user-favorites/<uuid>/
+POST   /api/workspaces/<slug>/projects/<uuid>/archive/
+POST   /api/workspaces/<slug>/projects/<uuid>/restore/
+GET    /api/workspaces/<slug>/projects/<uuid>/identifier-check/
+
+=== Issues (issue.py) ===
+GET    /api/workspaces/<slug>/projects/<uuid>/issues/
+POST   /api/workspaces/<slug>/projects/<uuid>/issues/
+GET    /api/workspaces/<slug>/projects/<uuid>/issues/list/
+GET    /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/
+PUT    /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/
+PATCH  /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/
+DELETE /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/
+GET    /api/workspaces/<slug>/projects/<uuid>/issues-detail/
+GET    /api/workspaces/<slug>/projects/<uuid>/v2/issues/
+GET    /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/sub-issues/
+POST   /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/sub-issues/
+GET    /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/links/
+POST   /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/links/
+GET    /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/links/<uuid>/
+DELETE /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/links/<uuid>/
+GET    /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/attachments/
+POST   /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/attachments/
+DELETE /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/attachments/<uuid>/
+GET    /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/comments/
+POST   /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/comments/
+GET    /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/comments/<uuid>/
+PATCH  /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/comments/<uuid>/
+DELETE /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/comments/<uuid>/
+GET    /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/activity/
+GET    /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/reactions/
+POST   /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/reactions/
+DELETE /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/reactions/<uuid>/
+GET    /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/subscribers/
+POST   /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/subscribers/
+DELETE /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/subscribers/<uuid>/
+GET    /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/relations/
+POST   /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/relations/
+DELETE /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/relations/<uuid>/
+GET    /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/versions/
+GET    /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/versions/<uuid>/
+POST   /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/archive/
+POST   /api/workspaces/<slug>/projects/<uuid>/issues/<uuid>/unarchive/
+POST   /api/workspaces/<slug>/projects/<uuid>/bulk-delete-issues/
+POST   /api/workspaces/<slug>/projects/<uuid>/bulk-archive-issues/
+GET    /api/workspaces/<slug>/projects/<uuid>/deleted-issues/
+
+=== Labels (issue.py) ===
+GET    /api/workspaces/<slug>/projects/<uuid>/issue-labels/
+POST   /api/workspaces/<slug>/projects/<uuid>/issue-labels/
+GET    /api/workspaces/<slug>/projects/<uuid>/issue-labels/<uuid>/
+PUT    /api/workspaces/<slug>/projects/<uuid>/issue-labels/<uuid>/
+PATCH  /api/workspaces/<slug>/projects/<uuid>/issue-labels/<uuid>/
+DELETE /api/workspaces/<slug>/projects/<uuid>/issue-labels/<uuid>/
+POST   /api/workspaces/<slug>/projects/<uuid>/bulk-create-labels/
+
+=== States (state.py) ===
+GET    /api/workspaces/<slug>/projects/<uuid>/states/
+POST   /api/workspaces/<slug>/projects/<uuid>/states/
+GET    /api/workspaces/<slug>/projects/<uuid>/states/<uuid>/
+PATCH  /api/workspaces/<slug>/projects/<uuid>/states/<uuid>/
+DELETE /api/workspaces/<slug>/projects/<uuid>/states/<uuid>/
+POST   /api/workspaces/<slug>/projects/<uuid>/states/<uuid>/mark-default/
+GET    /api/workspaces/<slug>/projects/<uuid>/intake-state/
+
+=== Cycles (cycle.py) ===
+GET    /api/workspaces/<slug>/projects/<uuid>/cycles/
+POST   /api/workspaces/<slug>/projects/<uuid>/cycles/
+GET    /api/workspaces/<slug>/projects/<uuid>/cycles/<uuid>/
+PUT    /api/workspaces/<slug>/projects/<uuid>/cycles/<uuid>/
+PATCH  /api/workspaces/<slug>/projects/<uuid>/cycles/<uuid>/
+DELETE /api/workspaces/<slug>/projects/<uuid>/cycles/<uuid>/
+GET    /api/workspaces/<slug>/projects/<uuid>/cycles/<uuid>/cycle-issues/
+POST   /api/workspaces/<slug>/projects/<uuid>/cycles/<uuid>/cycle-issues/
+GET    /api/workspaces/<slug>/projects/<uuid>/cycles/<uuid>/progress/
+GET    /api/workspaces/<slug>/projects/<uuid>/cycles/<uuid>/analytics/
+POST   /api/workspaces/<slug>/projects/<uuid>/cycles/<uuid>/archive/
+POST   /api/workspaces/<slug>/projects/<uuid>/cycles/<uuid>/unarchive/
+POST   /api/workspaces/<slug>/projects/<uuid>/cycles/<uuid>/transfer-issues/
+
+=== Modules (module.py) ===
+GET    /api/workspaces/<slug>/projects/<uuid>/modules/
+POST   /api/workspaces/<slug>/projects/<uuid>/modules/
+GET    /api/workspaces/<slug>/projects/<uuid>/modules/<uuid>/
+PUT    /api/workspaces/<slug>/projects/<uuid>/modules/<uuid>/
+PATCH  /api/workspaces/<slug>/projects/<uuid>/modules/<uuid>/
+DELETE /api/workspaces/<slug>/projects/<uuid>/modules/<uuid>/
+GET    /api/workspaces/<slug>/projects/<uuid>/modules/<uuid>/issues/
+POST   /api/workspaces/<slug>/projects/<uuid>/modules/<uuid>/issues/
+GET    /api/workspaces/<slug>/projects/<uuid>/modules/<uuid>/links/
+POST   /api/workspaces/<slug>/projects/<uuid>/modules/<uuid>/links/
+DELETE /api/workspaces/<slug>/projects/<uuid>/modules/<uuid>/links/<uuid>/
+POST   /api/workspaces/<slug>/projects/<uuid>/modules/<uuid>/archive/
+POST   /api/workspaces/<slug>/projects/<uuid>/modules/<uuid>/unarchive/
+
+=== Pages (page.py) ===
+GET    /api/workspaces/<slug>/projects/<uuid>/pages/
+POST   /api/workspaces/<slug>/projects/<uuid>/pages/
+GET    /api/workspaces/<slug>/projects/<uuid>/pages-summary/
+GET    /api/workspaces/<slug>/projects/<uuid>/pages/<uuid>/
+PATCH  /api/workspaces/<slug>/projects/<uuid>/pages/<uuid>/
+DELETE /api/workspaces/<slug>/projects/<uuid>/pages/<uuid>/
+GET    /api/workspaces/<slug>/projects/<uuid>/pages/<uuid>/versions/
+GET    /api/workspaces/<slug>/projects/<uuid>/pages/<uuid>/versions/<uuid>/
+POST   /api/workspaces/<slug>/projects/<uuid>/pages/<uuid>/duplicate/
+POST   /api/workspaces/<slug>/projects/<uuid>/pages/<uuid>/favorite/
+DELETE /api/workspaces/<slug>/projects/<uuid>/pages/<uuid>/favorite/
+
+=== Views (views.py) ===
+GET    /api/workspaces/<slug>/projects/<uuid>/views/
+POST   /api/workspaces/<slug>/projects/<uuid>/views/
+GET    /api/workspaces/<slug>/projects/<uuid>/views/<uuid>/
+PUT    /api/workspaces/<slug>/projects/<uuid>/views/<uuid>/
+PATCH  /api/workspaces/<slug>/projects/<uuid>/views/<uuid>/
+DELETE /api/workspaces/<slug>/projects/<uuid>/views/<uuid>/
+GET    /api/workspaces/<slug>/views/
+POST   /api/workspaces/<slug>/views/
+GET    /api/workspaces/<slug>/views/<uuid>/
+PUT    /api/workspaces/<slug>/views/<uuid>/
+PATCH  /api/workspaces/<slug>/views/<uuid>/
+DELETE /api/workspaces/<slug>/views/<uuid>/
+GET    /api/workspaces/<slug>/issues/
+GET    /api/workspaces/<slug>/projects/<uuid>/user-favorite-views/
+
+=== API Key Management (api.py within app/urls) ===
+GET    /api/v1/users/api-tokens/
+POST   /api/v1/users/api-tokens/
+GET    /api/v1/users/api-tokens/<uuid>/
+DELETE /api/v1/users/api-tokens/<uuid>/
+
+=== Public API v1 (plane/api/urls/) ===
+Base: /api/v1/
+Modules: asset, cycle, intake, label, member, module, project,
+         state, user, work_item, invite, sticky
+
+=== Notifications (notification.py) ===
+GET    /api/workspaces/<slug>/users/notifications/
+GET    /api/workspaces/<slug>/users/notifications/<uuid>/
+PATCH  /api/workspaces/<slug>/users/notifications/<uuid>/
+DELETE /api/workspaces/<slug>/users/notifications/<uuid>/
+POST   /api/workspaces/<slug>/users/notifications/<uuid>/read/
+DELETE /api/workspaces/<slug>/users/notifications/<uuid>/read/
+GET    /api/workspaces/<slug>/users/notifications/unread/
+POST   /api/workspaces/<slug>/users/notifications/mark-all-read/
+
+=== Search (search.py) ===
+GET    /api/workspaces/<slug>/search/
+GET    /api/workspaces/<slug>/projects/<uuid>/search-issues/
+GET    /api/workspaces/<slug>/entity-search/
+
+=== Webhooks (webhook.py) ===
+GET    /api/workspaces/<slug>/webhooks/
+POST   /api/workspaces/<slug>/webhooks/
+GET    /api/workspaces/<slug>/webhooks/<uuid>/
+PATCH  /api/workspaces/<slug>/webhooks/<uuid>/
+DELETE /api/workspaces/<slug>/webhooks/<uuid>/
+POST   /api/workspaces/<slug>/webhooks/<uuid>/regenerate/
+GET    /api/workspaces/<slug>/webhook-logs/<uuid>/
+
+=== Estimates (estimate.py) ===
+GET    /api/workspaces/<slug>/projects/<uuid>/estimates/
+POST   /api/workspaces/<slug>/projects/<uuid>/estimates/
+GET    /api/workspaces/<slug>/projects/<uuid>/estimates/<uuid>/
+PATCH  /api/workspaces/<slug>/projects/<uuid>/estimates/<uuid>/
+DELETE /api/workspaces/<slug>/projects/<uuid>/estimates/<uuid>/
+GET    /api/workspaces/<slug>/projects/<uuid>/project-estimates/
+
+=== Intakes (intake.py) ===
+GET    /api/workspaces/<slug>/projects/<uuid>/intakes/
+POST   /api/workspaces/<slug>/projects/<uuid>/intakes/
+GET    /api/workspaces/<slug>/projects/<uuid>/intakes/<uuid>/
+PATCH  /api/workspaces/<slug>/projects/<uuid>/intakes/<uuid>/
+DELETE /api/workspaces/<slug>/projects/<uuid>/intakes/<uuid>/
+GET    /api/workspaces/<slug>/projects/<uuid>/intake-issues/
+POST   /api/workspaces/<slug>/projects/<uuid>/intake-issues/
+
+=== Exporter (exporter.py) ===
+GET    /api/workspaces/<slug>/export-issues/
+
+=== Assets (asset.py) ===
+GET    /api/workspaces/<slug>/file-assets/
+POST   /api/assets/v2/workspaces/<slug>/
+PATCH  /api/assets/v2/workspaces/<slug>/<asset_id>/
+POST   /api/assets/v2/workspaces/<slug>/projects/<pid>/<pid>/bulk/
+GET    /api/assets/v2/static/<asset_id>/
+GET    /api/assets/v2/user-assets/
+
+=== Users (user.py) ===
+GET    /api/users/me/
+PATCH  /api/users/me/
+DELETE /api/users/me/
+GET    /api/users/me/profile/
+PATCH  /api/users/me/profile/
+GET    /api/users/me/settings/
+PATCH  /api/users/me/settings/
+PATCH  /api/users/me/onboard/
+PATCH  /api/users/me/tour-completed/
+GET    /api/users/me/workspaces/
+GET    /api/users/me/workspaces/invitations/
+GET    /api/users/me/activities/
+GET    /api/users/me/accounts/
+GET    /api/users/me/email/
+POST   /api/users/me/email/generate-code/
+GET    /api/users/me/instance-admin/
+GET    /api/users/me/notification-preferences/
+PATCH  /api/users/me/notification-preferences/
+POST   /api/users/last-visited-workspace/
+GET    /api/users/me/sessions/
+
+================================================================================
+8. API ENDPOINT CATALOG (curated for Day 3 automation)
+================================================================================
+
+Format: ID | Method | Path | Module | Evidence | Confidence | Status | Auth
+
+API-DISC-001 | GET  | /api/instances/                              | Instance  | HTTP+Log | Confirmed | 200 | No
+API-DISC-002 | GET  | /api/instances/admins/                        | Instance  | Log      | Confirmed | 200 | Yes
+API-DISC-003 | GET  | /api/instances/admins/me/                     | Instance  | Log      | Confirmed | 200 | Yes
+API-DISC-004 | POST | /auth/sign-in/                                | Auth      | Log      | Confirmed | 302 | No (CSRF)
+API-DISC-005 | GET  | /auth/get-csrf-token/                         | Auth      | HTTP+Log | Confirmed | 200 | No
+API-DISC-006 | GET  | /api/users/me/                                | User      | Log      | Confirmed | 200 | Yes
+API-DISC-007 | PATCH| /api/users/me/                                | User      | Log      | Confirmed | 200 | Yes
+API-DISC-008 | GET  | /api/users/me/profile/                        | User      | Log      | Confirmed | 200 | Yes
+API-DISC-009 | PATCH| /api/users/me/profile/                        | User      | Log      | Confirmed | 200 | Yes
+API-DISC-010 | GET  | /api/users/me/settings/                       | User      | Log      | Confirmed | 200 | Yes
+API-DISC-011 | GET  | /api/users/me/workspaces/                     | User      | Log      | Confirmed | 200 | Yes
+API-DISC-012 | GET  | /api/workspace-slug-check/                    | Workspace | Log      | Confirmed | 200 | Yes
+API-DISC-013 | POST | /api/workspaces/                              | Workspace | Log      | Confirmed | 201 | Yes
+API-DISC-014 | GET  | /api/workspaces/<slug>/                       | Workspace | URL conf | High     | N/A | Yes
+API-DISC-015 | PATCH| /api/workspaces/<slug>/                       | Workspace | URL conf | High     | N/A | Yes
+API-DISC-016 | GET  | /api/workspaces/<slug>/members/               | Members   | Log      | Confirmed | 200 | Yes
+API-DISC-017 | POST | /api/workspaces/<slug>/members/               | Members   | URL conf | High     | N/A | Yes
+API-DISC-018 | GET  | /api/workspaces/<slug>/workspace-members/me/  | Members   | Log      | Confirmed | 200 | Yes
+API-DISC-019 | GET  | /api/workspaces/<slug>/projects/              | Project   | Log      | Confirmed | 200 | Yes
+API-DISC-020 | POST | /api/workspaces/<slug>/projects/              | Project   | Log      | Confirmed | 201 | Yes
+API-DISC-021 | GET  | /api/workspaces/<slug>/projects/<pid>/        | Project   | Log      | Confirmed | 200 | Yes
+API-DISC-022 | PATCH| /api/workspaces/<slug>/projects/<pid>/        | Project   | Log      | Confirmed | 200 | Yes
+API-DISC-023 | GET  | /api/workspaces/<slug>/projects/<pid>/states/ | States    | Log      | Confirmed | 200 | Yes
+API-DISC-024 | POST | /api/workspaces/<slug>/projects/<pid>/states/ | States    | URL conf | High     | N/A | Yes
+API-DISC-025 | GET  | /api/workspaces/<slug>/projects/<pid>/members/| Members   | Log      | Confirmed | 200 | Yes
+API-DISC-026 | GET  | /api/workspaces/<slug>/projects/<pid>/issue-labels/ | Labels | Log  | Confirmed | 200 | Yes
+API-DISC-027 | POST | /api/workspaces/<slug>/projects/<pid>/issue-labels/ | Labels | URL conf | High | N/A | Yes
+API-DISC-028 | GET  | /api/workspaces/<slug>/projects/<pid>/issues/ | Work Items| Log     | Confirmed | 200 | Yes
+API-DISC-029 | POST | /api/workspaces/<slug>/projects/<pid>/issues/ | Work Items| Log     | Confirmed | 201 | Yes
+API-DISC-030 | GET  | /api/workspaces/<slug>/projects/<pid>/issues/<iid>/ | Work Items | URL conf | High | N/A | Yes
+API-DISC-031 | PATCH| /api/workspaces/<slug>/projects/<pid>/issues/<iid>/ | Work Items | URL conf | High | N/A | Yes
+API-DISC-032 | DELETE| /api/workspaces/<slug>/projects/<pid>/issues/<iid>/ | Work Items | URL conf | High | N/A | Yes
+API-DISC-033 | GET  | /api/workspaces/<slug>/projects/<pid>/cycles/ | Cycles    | Log      | Confirmed | 200 | Yes
+API-DISC-034 | POST | /api/workspaces/<slug>/projects/<pid>/cycles/ | Cycles    | URL conf | High     | N/A | Yes
+API-DISC-035 | GET  | /api/workspaces/<slug>/projects/<pid>/modules/| Modules   | Log      | Confirmed | 200 | Yes
+API-DISC-036 | POST | /api/workspaces/<slug>/projects/<pid>/modules/| Modules   | URL conf | High     | N/A | Yes
+API-DISC-037 | GET  | /api/workspaces/<slug>/projects/<pid>/estimates/ | Estimates | Log   | Confirmed | 200 | Yes
+API-DISC-038 | GET  | /api/workspaces/<slug>/projects/<pid>/views/  | Views     | Log      | Confirmed | 200 | Yes
+API-DISC-039 | GET  | /api/workspaces/<slug>/projects/<pid>/intake-state/ | Intake | Log  | Confirmed | 200 | Yes
+API-DISC-040 | GET  | /api/workspaces/<slug>/projects/<pid>/project-members/me/ | Members | Log | Confirmed | 200 | Yes
+API-DISC-041 | GET  | /api/workspaces/<slug>/projects/<pid>/issues/<iid>/comments/ | Comments | URL conf | High | N/A | Yes
+API-DISC-042 | POST | /api/workspaces/<slug>/projects/<pid>/issues/<iid>/comments/ | Comments | URL conf | High | N/A | Yes
+API-DISC-043 | GET  | /api/workspaces/<slug>/projects/<pid>/issues/<iid>/activity/ | Activity | URL conf | High | N/A | Yes
+API-DISC-044 | GET  | /api/v1/users/api-tokens/                    | API Key   | URL conf | High     | N/A | Yes
+API-DISC-045 | POST | /api/v1/users/api-tokens/                    | API Key   | URL conf | High     | N/A | Yes
+API-DISC-046 | GET  | /api/workspaces/<slug>/users/notifications/   | Notification | URL conf | High | N/A | Yes
+API-DISC-047 | GET  | /api/workspaces/<slug>/users/notifications/unread/ | Notification | Log | Confirmed | 200 | Yes
+API-DISC-048 | GET  | /api/workspaces/<slug>/projects/<pid>/pages/  | Pages     | URL conf | High     | N/A | Yes
+API-DISC-049 | POST | /api/workspaces/<slug>/projects/<pid>/pages/  | Pages     | URL conf | High     | N/A | Yes
+API-DISC-050 | GET  | /api/workspaces/<slug>/webhooks/              | Webhooks  | URL conf | High     | N/A | Yes
+API-DISC-051 | GET  | /api/workspaces/<slug>/search/                | Search    | URL conf | High     | N/A | Yes
+API-DISC-052 | GET  | /api/workspaces/<slug>/export-issues/         | Exporter  | URL conf | High     | N/A | Yes
+
+================================================================================
+9. AUTHENTICATION OBSERVATIONS
+================================================================================
+
+Auth Mechanism: Session/Cookie-based (Django session auth)
+  - CSRF token required for POST/PATCH/PUT/DELETE
+  - CSRF token obtained from GET /auth/get-csrf-token/
+  - Session cookie set after POST /auth/sign-in/
+  - HTTP 401 returned for unauthenticated requests to protected endpoints
+
+API Key Support: CONFIRMED
+  - Environment variable: API_KEY_RATE_LIMIT (60/minute)
+  - Endpoint: /api/v1/users/api-tokens/ (from Django URL conf)
+  - JS reference: /api/users/api-tokens/
+  - API v1 public endpoints available under /api/v1/
+
+Auth Boundary:
+  - /api/instances/ - PUBLIC (no auth)
+  - /auth/get-csrf-token/ - PUBLIC
+  - /api/users/me/ - 401 when unauthenticated
+  - /api/workspaces/ - 401 when unauthenticated
+  - /spaces/ - PUBLIC (separate app)
+  - /god-mode/ - PUBLIC (separate app, has own auth)
+
+Day 3 Recommendation:
+  Session-based authentication (login via UI, capture cookies)
+  OR
+  User manually creates API Key via Plane UI at Settings -> API Tokens
+  Then use X-API-Key header for API requests
+
+NOTE: API Key creation endpoint exists but requires authentication first.
+      The user must create an API Key through the UI or we must first
+      authenticate with session to call POST /api/v1/users/api-tokens/
+
+================================================================================
+10. PAGINATION, FILTERING & SORTING CLUES
+================================================================================
+
+Observed from issue list log entry:
+  GET /api/workspaces/<slug>/projects/<pid>/issues/
+    ?order_by=-created_at
+    &sub_issue=true
+    &filters=%7B%7D           (URL-encoded JSON: {})
+    &layout=list
+    &cursor=100:0:0           (cursor-based pagination)
+    &per_page=100
+
+Observed from stickies:
+  GET /api/workspaces/<slug>/stickies/?cursor=30:0:0&per_page=30&query=
+
+Pagination: Cursor-based (cursor and per_page parameters)
+Filtering: URL-encoded JSON in filters parameter
+Sorting: order_by parameter (prefix with - for descending)
+Layout: layout parameter (list, board, etc.)
+
+================================================================================
+11. UNCONFIRMED ITEMS
+================================================================================
+
+- DRF Spectacular schema endpoints are disabled (ENABLE_DRF_SPECTACULAR=0)
+  Cannot confirm exact request/response schemas without auth
+- API v1 public endpoints under /api/v1/ not tested (require API Key)
+- /api/public/ (Space API) endpoints not tested
+- Webhook endpoints not tested
+- Intake endpoints not confirmed via logs
+- Page endpoints not confirmed via logs
+- Exact response field types for most endpoints not confirmed
+
+================================================================================
+12. SENSITIVE INFORMATION HANDLING
+================================================================================
+
+The following were REDACTED in this report:
+- Cookie values in proxy and API logs -> replaced with [REDACTED]
+- User ID (91b3dba8-...) in log entries -> retained (non-sensitive UUID,
+  not a credential)
+- Instance ID -> retained (non-sensitive)
+- CSRF token in response example -> retained (ephemeral, rotated per session)
+- Database connection strings from compose file -> not output
+- SECRET_KEY from compose file -> not output
+- API Key values -> none observed in logs
+
+================================================================================
+END OF API DISCOVERY EVIDENCE
+================================================================================

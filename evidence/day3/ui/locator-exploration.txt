@@ -1,0 +1,389 @@
+=== STEP 1: Login Email ===
+URL: http://192.168.146.132:8090/
+Filled email via getByRole('textbox')
+Clicked Continue
+URL after continue: http://192.168.146.132:8090/
+  BTN: ""
+  BTN: ""
+  BTN: "Forgot your password?"
+  BTN: "Go to workspace"
+=== STEP 2: Login Password ===
+Filled password via getByPlaceholder(/password/i)
+Clicked 'Go to workspace'
+URL after login: http://192.168.146.132:8090/qa-lab/
+Page text preview: Q
+QA Lab
+Star us on GitHub
+A
+Projects
+New work item
+
+Home
+
+Drafts
+
+Your work
+
+Stickies
+
+Workspace
+
+Projects
+
+More
+Projects
+📌
+
+Plane QA Project
+
+👇
+
+QA Lab
+
+Community
+Projects
+New work item
+
+Home
+
+Drafts
+
+Your work
+
+Stickies
+
+Workspace
+
+Projects
+
+More
+Projects
+📌
+
+Plane QA Project
+
+👇
+
+QA Lab
+
+Community
+Home
+Manage widgets
+Good morning, xiaojing zhang
+🌤️
+Monday, Jul 13 02:54
+=== STEP 3: Workspace ===
+  heading: "QA Lab"
+  heading: "Good morning, xiaojing zhang"
+  heading: "🌤️Monday, Jul 13 02:54"
+  heading: "Create a project"
+  heading: "Invite your team"
+  heading: "Set up your workspace."
+  heading: "Make Plane yours."
+  link: "Star us on GitHub"
+  link: "Home"
+  link: "Drafts"
+  link: "Your work"
+  link: "Stickies"
+  link: "Projects"
+  link: "📌Plane QA Project"
+  link: "👇QA Lab"
+  link: "Home"
+  link: "Drafts"
+  link: "Your work"
+  link: "Stickies"
+  link: "Projects"
+  link: "📌Plane QA Project"
+  link: "👇QA Lab"
+  link: "Get them in"
+  link: "Configure this workspace"
+  link: "a"
+  link: "Personalize now"
+  link: "PLANEQAPRO-1Verify Plane environment availabilityabout 3 hours ago"
+  link: "📌PLANEQAPROPlane QA Projectabout 2 hours ago"
+  button: "QQA Lab"
+  button: "A"
+  button: "A"
+  button: "New work item"
+  button: "Workspace"
+  button: "More"
+  button: "Projects"
+  button: "📌Plane QA Project"
+  button: "👇QA Lab"
+  button: "Community"
+  button: "New work item"
+  button: "Workspace"
+  button: "More"
+  button: "Projects"
+  button: "📌Plane QA Project"
+  button: "👇QA Lab"
+  button: "Community"
+  button: "Manage widgets"
+  button: "Not right now"
+  button: "Add quick Link"
+  button: "All"
+  button: "All"
+  button: "A"
+  button: "A"
+  button: "Add sticky"
+=== STEP 4: Navigate to Work Items ===
+Sidebar/nav links: 14
+  nav-link: "Home" -> /qa-lab/
+  nav-link: "Drafts" -> /qa-lab/drafts/
+  nav-link: "Your work" -> /qa-lab/profile/91b3dba8-eedf-4dd1-b8f8-2b98c4310304/
+  nav-link: "Stickies" -> /qa-lab/stickies/
+  nav-link: "Projects" -> /qa-lab/projects/
+  nav-link: "📌Plane QA Project" -> /qa-lab/projects/0c1cf73f-2d88-430b-812b-2e1c7f010c3c/issues
+  nav-link: "👇QA Lab" -> /qa-lab/projects/93c04c4a-6874-425e-b143-17f55ddc4a92/issues
+  nav-link: "Home" -> /qa-lab/
+  nav-link: "Drafts" -> /qa-lab/drafts/
+  nav-link: "Your work" -> /qa-lab/profile/91b3dba8-eedf-4dd1-b8f8-2b98c4310304/
+  nav-link: "Stickies" -> /qa-lab/stickies/
+  nav-link: "Projects" -> /qa-lab/projects/
+  nav-link: "📌Plane QA Project" -> /qa-lab/projects/0c1cf73f-2d88-430b-812b-2e1c7f010c3c/issues
+  nav-link: "👇QA Lab" -> /qa-lab/projects/93c04c4a-6874-425e-b143-17f55ddc4a92/issues
+getByText(/Plane QA/i): count=1
+getByText(/work items|issues/i): count=0
+URL after clicking Plane QA: http://192.168.146.132:8090/qa-lab/
+=== STEP 5: Full page dump ===
+Sections/containers: 8
+  section: "Q
+QA Lab
+Star us on GitHub
+A
+Projects
+New work item
+
+Home
+
+Drafts
+
+Your work
+
+Stickies
+
+Workspace
+
+P"
+  section: "Q
+QA Lab
+Star us on GitHub
+A
+Projects
+New work item
+
+Home
+
+Drafts
+
+Your work
+
+Stickies
+
+Workspace
+
+P"
+  section: "Projects
+New work item
+
+Home
+
+Drafts
+
+Your work
+
+Stickies
+
+Workspace
+
+Projects
+
+More
+Projects
+📌
+
+Pl"
+  section: "Projects
+New work item
+
+Home
+
+Drafts
+
+Your work
+
+Stickies
+
+Workspace
+
+Projects
+
+More
+Projects
+📌
+
+Pl"
+  section: "Home
+Manage widgets
+Good morning, xiaojing zhang
+🌤️
+Monday, Jul 13 02:54
+Your quickstart guide
+Not "
+  section: "Home
+Manage widgets"
+=== STEP 6: Direct URL navigation ===
+Direct workspace URL: http://192.168.146.132:8090/qa-lab
+Direct issues URL: http://192.168.146.132:8090/qa-lab/projects/0c1cf73f-2d88-430b-812b-2e1c7f010c3c/issues
+--- Issues page buttons ---
+  BTN: "Edit"
+  BTN: "Make a copy"
+  BTN: "Open in new tab"
+  BTN: "Copy link"
+  BTN: "ArchiveOnly completed or canceled
+work items can be archived"
+  BTN: "Delete"
+  BTN: "Edit"
+  BTN: "Make a copy"
+  BTN: "Open in new tab"
+  BTN: "Copy link"
+  BTN: "ArchiveOnly completed or canceled
+work items can be archived"
+  BTN: "Delete"
+  BTN: "QQA Lab"
+  BTN: "A"
+  BTN: "A"
+  BTN: "New work item"
+  BTN: "Workspace"
+  BTN: "More"
+  BTN: "Projects"
+  BTN: "📌Plane QA Project"
+  BTN: "👇QA Lab"
+  BTN: "Community"
+  BTN: "New work item"
+  BTN: "Workspace"
+  BTN: "More"
+  BTN: "Projects"
+  BTN: "📌Plane QA Project"
+  BTN: "👇QA Lab"
+  BTN: "Community"
+  BTN: "...📌Plane QA Project"
+  BTN: "...📌Plane QA Project"
+  BTN: "Display"
+  BTN: "Analytics"
+  BTN: "Work itemAdd work item"
+  BTN: "PLANEQAPRO-1"
+  BTN: "Backlog"
+  BTN: "Backlog"
+--- Issues page inputs ---
+  INPUT: type="text" placeholder="Search commands..."
+--- Issues page links/headings ---
+  heading: "Edit"
+  heading: "Make a copy"
+  heading: "Open in new tab"
+  heading: "Copy link"
+  heading: "Archive"
+  heading: "Delete"
+  heading: "Edit"
+  heading: "Make a copy"
+  heading: "Open in new tab"
+  heading: "Copy link"
+  heading: "Archive"
+  heading: "Delete"
+  heading: "QA Lab"
+  link: "Star us on GitHub"
+  link: "Home"
+  link: "Drafts"
+  link: "Your work"
+  link: "Stickies"
+  link: "Projects"
+  link: "📌Plane QA Project"
+  link: "Work items"
+  link: "Pages"
+  link: "👇QA Lab"
+  link: "Home"
+  link: "Drafts"
+  link: "Your work"
+  link: "Stickies"
+  link: "Projects"
+  link: "📌Plane QA Project"
+  link: "Work items"
+  link: "Pages"
+  link: "👇QA Lab"
+  link: "Work Items"
+  link: "PLANEQAPRO-1Verify Plane environment availabilityBacklog"
+=== STEP 7: Open work item ===
+Issue-like elements: count=262
+Found link matching "Verify Plane": "Verify Plane environment availability"
+URL after click: http://192.168.146.132:8090/qa-lab/projects/0c1cf73f-2d88-430b-812b-2e1c7f010c3c/issues
+--- Detail page ---
+  BTN: "Edit"
+  BTN: "Make a copy"
+  BTN: "Open in new tab"
+  BTN: "Copy link"
+  BTN: "ArchiveOnly completed or canceled
+work items can be archived"
+  BTN: "Delete"
+  BTN: "Edit"
+  BTN: "Make a copy"
+  BTN: "Open in new tab"
+  BTN: "Copy link"
+  BTN: "ArchiveOnly completed or canceled
+work items can be archived"
+  BTN: "Delete"
+  BTN: "Make a copy"
+  BTN: "Open in new tab"
+  BTN: "ArchiveOnly completed or canceled
+work items can be archived"
+  BTN: "Delete"
+  BTN: "QQA Lab"
+  BTN: "A"
+  BTN: "A"
+  BTN: "Unsubscribe"
+  BTN: "PLANEQAPRO-1"
+  BTN: "Last edited by admin about 14 hours ago"
+  BTN: "Add sub-work item"
+  BTN: "Add sub-work item"
+  BTN: "Add relation"
+  BTN: "Add relation"
+  BTN: "Add link"
+  BTN: "Add link"
+  BTN: "Attach"
+  BTN: "Attach"
+  BTN: "Backlog"
+  BTN: "Backlog"
+  BTN: "Add assignees"
+  BTN: "Add assignees"
+  BTN: "None"
+  BTN: "Add start date"
+  BTN: "Add start date"
+  BTN: "Add due date"
+  BTN: "Add due date"
+  BTN: "Add parent work item"
+  BTN: "Add labels"
+  BTN: "Comment"
+  BTN: "New work item"
+  BTN: "Workspace"
+  BTN: "More"
+  BTN: "Projects"
+  BTN: "📌Plane QA Project"
+  BTN: "👇QA Lab"
+  BTN: "Community"
+  BTN: "New work item"
+  BTN: "Workspace"
+  BTN: "More"
+  BTN: "Projects"
+  BTN: "📌Plane QA Project"
+  BTN: "👇QA Lab"
+  BTN: "Community"
+  BTN: "...📌Plane QA Project"
+  BTN: "...📌Plane QA Project"
+  BTN: "Display"
+  BTN: "Analytics"
+  BTN: "Work itemAdd work item"
+  BTN: "PLANEQAPRO-1"
+  BTN: "Backlog"
+  BTN: "Backlog"
+=== STEP 8: New work item form ===
+Add/New/Create buttons: count=0
+=== DONE ===

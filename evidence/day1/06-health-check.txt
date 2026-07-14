@@ -1,0 +1,25 @@
+
+===== HTTP health check =====
+Target URL source: PLANE_BASE_URL
+HTTP status: 200
+HTTP result: PASS
+
+===== Docker container status =====
+ID	NAME	STATUS	COMPOSE_PROJECT
+693fbb19581f	plane-app-proxy-1	Up 5 minutes	plane-app
+f7e868d0ef9c	plane-app-space-1	Up 5 minutes (healthy)	plane-app
+f3b8721eec8a	plane-app-admin-1	Up 5 minutes (healthy)	plane-app
+1e6f48258d33	plane-app-live-1	Up 5 minutes	plane-app
+d52de0a7ec5b	plane-app-web-1	Up 6 minutes (healthy)	plane-app
+706aa0ae1ee8	plane-app-worker-1	Up 6 minutes	plane-app
+7d3d9e4832c9	plane-app-beat-worker-1	Up 6 minutes	plane-app
+4c6ad02399db	plane-app-api-1	Up 6 minutes	plane-app
+2ef87633c7ae	plane-app-migrator-1	Exited (0) About a minute ago	plane-app
+1c538ecf6436	plane-app-plane-db-1	Up 6 minutes	plane-app
+9d4aa4945117	plane-app-plane-mq-1	Up 6 minutes	plane-app
+feacef55e693	plane-app-plane-minio-1	Up 6 minutes	plane-app
+d1f7fcc2b19d	plane-app-plane-redis-1	Up 6 minutes	plane-app
+Container health: PASS (no restarting or unhealthy container detected)
+
+===== Result =====
+Health check passed.

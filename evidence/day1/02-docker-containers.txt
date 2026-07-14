@@ -1,0 +1,47 @@
+=== CAPTURED AT ===
+2026-07-12T12:15:52+00:00
+
+=== COMPOSE PROJECTS ===
+NAME                             STATUS              CONFIG FILES
+basic-services                   running(3)          /home/tester/qa-workspace/docker-labs/basic-services/docker-compose.yml
+filebrowser-ai-testing-project   running(1)          /home/tester/qa-workspace/filebrowser-ai-testing-project/docker-compose.yml
+jenkins                          running(1)          /home/tester/qa-workspace/docker-labs/jenkins/docker-compose.yml
+plane-app                        running(12)         /home/tester/qa-workspace/plane-selfhost/plane-app/docker-compose.yaml
+
+=== ALL RELEVANT CONTAINERS ===
+NAMES                     IMAGE                               STATUS                     PORTS
+plane-app-proxy-1         makeplane/plane-proxy:v1.3.1        Up 8 minutes               443/udp, 2019/tcp, 0.0.0.0:8090->80/tcp, [::]:8090->80/tcp, 0.0.0.0:8443->443/tcp, [::]:8443->443/tcp
+plane-app-space-1         makeplane/plane-space:v1.3.1        Up 8 minutes (healthy)     3000/tcp
+plane-app-admin-1         makeplane/plane-admin:v1.3.1        Up 8 minutes (healthy)     80/tcp, 3000/tcp
+plane-app-live-1          makeplane/plane-live:v1.3.1         Up 8 minutes               3000/tcp
+plane-app-web-1           makeplane/plane-frontend:v1.3.1     Up 8 minutes (healthy)     80/tcp, 3000/tcp
+plane-app-worker-1        makeplane/plane-backend:v1.3.1      Up 8 minutes               8000/tcp
+plane-app-beat-worker-1   makeplane/plane-backend:v1.3.1      Up 8 minutes               8000/tcp
+plane-app-api-1           makeplane/plane-backend:v1.3.1      Up 8 minutes               8000/tcp
+plane-app-migrator-1      makeplane/plane-backend:v1.3.1      Exited (0) 4 minutes ago   
+plane-app-plane-db-1      postgres:15.7-alpine                Up 8 minutes               5432/tcp
+plane-app-plane-mq-1      rabbitmq:3.13.6-management-alpine   Up 8 minutes               4369/tcp, 5671-5672/tcp, 15671-15672/tcp, 15691-15692/tcp, 25672/tcp
+plane-app-plane-minio-1   minio/minio:latest                  Up 8 minutes               9000/tcp
+plane-app-plane-redis-1   valkey/valkey:7.2.11-alpine         Up 8 minutes               6379/tcp
+qa-filebrowser            filebrowser/filebrowser:v2.63.18    Up 2 hours (healthy)       0.0.0.0:8082->80/tcp, [::]:8082->80/tcp
+qa-jenkins                jenkins/jenkins:lts-jdk17           Up 2 hours                 0.0.0.0:50000->50000/tcp, [::]:50000->50000/tcp, 0.0.0.0:8081->8080/tcp, [::]:8081->8080/tcp
+qa-redis                  redis:7                             Up 2 hours                 0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp
+qa-nginx                  nginx:alpine                        Up 2 hours                 0.0.0.0:8080->80/tcp, [::]:8080->80/tcp
+qa-mysql                  mysql:8.0                           Up 2 hours                 0.0.0.0:3306->3306/tcp, [::]:3306->3306/tcp, 33060/tcp
+keen_bouman               hello-world                         Exited (0) 8 days ago      
+
+=== PLANE COMPOSE STATUS ===
+NAME                      IMAGE                               COMMAND                  SERVICE       CREATED         STATUS                     PORTS
+plane-app-admin-1         makeplane/plane-admin:v1.3.1        "/docker-entrypoint.…"   admin         8 minutes ago   Up 8 minutes (healthy)     80/tcp, 3000/tcp
+plane-app-api-1           makeplane/plane-backend:v1.3.1      "./bin/docker-entryp…"   api           8 minutes ago   Up 8 minutes               8000/tcp
+plane-app-beat-worker-1   makeplane/plane-backend:v1.3.1      "./bin/docker-entryp…"   beat-worker   8 minutes ago   Up 8 minutes               8000/tcp
+plane-app-live-1          makeplane/plane-live:v1.3.1         "docker-entrypoint.s…"   live          8 minutes ago   Up 8 minutes               3000/tcp
+plane-app-migrator-1      makeplane/plane-backend:v1.3.1      "./bin/docker-entryp…"   migrator      8 minutes ago   Exited (0) 4 minutes ago   
+plane-app-plane-db-1      postgres:15.7-alpine                "docker-entrypoint.s…"   plane-db      8 minutes ago   Up 8 minutes               5432/tcp
+plane-app-plane-minio-1   minio/minio:latest                  "/usr/bin/docker-ent…"   plane-minio   8 minutes ago   Up 8 minutes               9000/tcp
+plane-app-plane-mq-1      rabbitmq:3.13.6-management-alpine   "docker-entrypoint.s…"   plane-mq      8 minutes ago   Up 8 minutes               4369/tcp, 5671-5672/tcp, 15671-15672/tcp, 15691-15692/tcp, 25672/tcp
+plane-app-plane-redis-1   valkey/valkey:7.2.11-alpine         "docker-entrypoint.s…"   plane-redis   8 minutes ago   Up 8 minutes               6379/tcp
+plane-app-proxy-1         makeplane/plane-proxy:v1.3.1        "caddy run --config …"   proxy         8 minutes ago   Up 8 minutes               443/udp, 2019/tcp, 0.0.0.0:8090->80/tcp, [::]:8090->80/tcp, 0.0.0.0:8443->443/tcp, [::]:8443->443/tcp
+plane-app-space-1         makeplane/plane-space:v1.3.1        "docker-entrypoint.s…"   space         8 minutes ago   Up 8 minutes (healthy)     3000/tcp
+plane-app-web-1           makeplane/plane-frontend:v1.3.1     "/docker-entrypoint.…"   web           8 minutes ago   Up 8 minutes (healthy)     80/tcp, 3000/tcp
+plane-app-worker-1        makeplane/plane-backend:v1.3.1      "./bin/docker-entryp…"   worker        8 minutes ago   Up 8 minutes               8000/tcp

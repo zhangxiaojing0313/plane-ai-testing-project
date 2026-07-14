@@ -1,0 +1,248 @@
+=== SANITIZED LOGS - 2026-07-12T12:15:37+00:00 ===
+
+--- API (last 30 lines) ---
+api-1  | GITEA_CLIENT_ID loaded with value from environment variable.
+api-1  | GITEA_CLIENT_[REDACTED] loaded with value from environment variable.
+api-1  | ENABLE_GITEA_SYNC loaded with value from environment variable.
+api-1  | ENABLE_SMTP loaded with value from environment variable.
+api-1  | EMAIL_HOST loaded with value from environment variable.
+api-1  | EMAIL_HOST_USER loaded with value from environment variable.
+api-1  | EMAIL_HOST_[REDACTED] loaded with value from environment variable.
+api-1  | EMAIL_PORT loaded with value from environment variable.
+api-1  | EMAIL_FROM loaded with value from environment variable.
+api-1  | EMAIL_USE_TLS loaded with value from environment variable.
+api-1  | EMAIL_USE_SSL loaded with value from environment variable.
+api-1  | LLM_[REDACTED] loaded with value from environment variable.
+api-1  | LLM_PROVIDER loaded with value from environment variable.
+api-1  | LLM_MODEL loaded with value from environment variable.
+api-1  | GPT_ENGINE loaded with value from environment variable.
+api-1  | UNSPLASH_ACCESS_KEY loaded with value from environment variable.
+api-1  | IS_GOOGLE_ENABLED configuration already exists
+api-1  | IS_GITHUB_ENABLED configuration already exists
+api-1  | IS_GITLAB_ENABLED configuration already exists
+api-1  | IS_GITEA_ENABLED configuration already exists
+api-1  | Checking bucket...
+api-1  | Bucket 'uploads' does not exist. Creating bucket...
+api-1  | Bucket 'uploads' created successfully.
+api-1  | Cache Cleared
+api-1  | 
+api-1  | 44 static files copied to '/code/plane/static-assets/collected-static', 96 post-processed.
+api-1  | [2026-07-12 12:12:32 +0000] [1] [INFO] Starting gunicorn 23.0.0
+api-1  | [2026-07-12 12:12:32 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+api-1  | [2026-07-12 12:12:32 +0000] [1] [INFO] Using worker: uvicorn.workers.UvicornWorker
+api-1  | [2026-07-12 12:12:32 +0000] [172] [INFO] Booting worker with pid: 172
+
+--- MIGRATOR (all) ---
+migrator-1  | Waiting for database...
+migrator-1  | Database available!
+migrator-1  | Operations to perform:
+migrator-1  |   Apply all migrations: auth, contenttypes, db, django_celery_beat, license, sessions
+migrator-1  | Running migrations:
+migrator-1  |   Applying contenttypes.0001_initial... OK
+migrator-1  |   Applying contenttypes.0002_remove_content_type_name... OK
+migrator-1  |   Applying auth.0001_initial... OK
+migrator-1  |   Applying auth.0002_alter_permission_name_max_length... OK
+migrator-1  |   Applying auth.0003_alter_user_email_max_length... OK
+migrator-1  |   Applying auth.0004_alter_user_username_opts... OK
+migrator-1  |   Applying auth.0005_alter_user_last_login_null... OK
+migrator-1  |   Applying auth.0006_require_contenttypes_0002... OK
+migrator-1  |   Applying auth.0007_alter_validators_add_error_messages... OK
+migrator-1  |   Applying auth.0008_alter_user_username_max_length... OK
+migrator-1  |   Applying auth.0009_alter_user_last_name_max_length... OK
+migrator-1  |   Applying auth.0010_alter_group_name_max_length... OK
+migrator-1  |   Applying auth.0011_update_proxy_permissions... OK
+migrator-1  |   Applying auth.0012_alter_user_first_name_max_length... OK
+migrator-1  |   Applying db.0001_initial... OK
+migrator-1  |   Applying db.0002_auto_20221104_2239... OK
+migrator-1  |   Applying db.0003_auto_20221109_2320... OK
+migrator-1  |   Applying db.0004_alter_state_sequence... OK
+migrator-1  |   Applying db.0005_auto_20221114_2127... OK
+migrator-1  |   Applying db.0006_alter_cycle_status... OK
+migrator-1  |   Applying db.0007_label_parent... OK
+migrator-1  |   Applying db.0008_label_colour... OK
+migrator-1  |   Applying db.0009_auto_20221208_0310... OK
+migrator-1  |   Applying db.0010_auto_20221213_0037... OK
+migrator-1  |   Applying db.0011_auto_20221222_2357... OK
+migrator-1  |   Applying db.0012_auto_20230104_0117... OK
+migrator-1  |   Applying db.0013_auto_20230107_0041... OK
+migrator-1  |   Applying db.0014_alter_workspacememberinvite_unique_together... OK
+migrator-1  |   Applying db.0015_auto_20230107_1636... OK
+migrator-1  |   Applying db.0016_auto_20230107_1735... OK
+migrator-1  |   Applying db.0017_alter_workspace_unique_together... OK
+migrator-1  |   Applying db.0018_auto_20230130_0119... OK
+migrator-1  |   Applying db.0019_auto_20230131_0049... OK
+migrator-1  |   Applying db.0020_auto_20230214_0118... OK
+migrator-1  |   Applying db.0021_auto_20230223_0104... OK
+migrator-1  |   Applying db.0022_auto_20230307_0304... OK
+migrator-1  |   Applying db.0023_auto_20230316_0040... OK
+migrator-1  |   Applying db.0024_auto_20230322_0138... OK
+migrator-1  |   Applying db.0025_auto_20230331_0203... OK
+migrator-1  |   Applying db.0026_alter_projectmember_view_props... OK
+migrator-1  |   Applying db.0027_auto_20230409_0312... OK
+migrator-1  |   Applying db.0028_auto_20230414_1703... OK
+migrator-1  |   Applying db.0029_auto_20230502_0126... OK
+migrator-1  |   Applying db.0030_alter_estimatepoint_unique_together... OK
+migrator-1  |   Applying db.0031_analyticview... OK
+migrator-1  |   Applying db.0032_auto_20230520_2015... OK
+migrator-1  |   Applying db.0033_auto_20230618_2125... OK
+migrator-1  |   Applying db.0034_auto_20230628_1046... OK
+migrator-1  |   Applying db.0035_auto_20230704_2225... OK
+migrator-1  |   Applying db.0036_alter_workspace_organization_size... OK
+migrator-1  |   Applying db.0037_issue_archived_at_project_archive_in_and_more... OK
+migrator-1  |   Applying db.0038_auto_20230720_1505... OK
+migrator-1  |   Applying db.0039_auto_20230723_2203... OK
+migrator-1  |   Applying db.0040_projectmember_preferences_user_cover_image_and_more... OK
+migrator-1  |   Applying db.0041_cycle_sort_order_issuecomment_access_and_more... OK
+migrator-1  |   Applying db.0042_alter_analyticview_created_by_and_more... OK
+migrator-1  |   Applying db.0043_alter_analyticview_created_by_and_more... OK
+migrator-1  |   Applying db.0044_auto_20230913_0709... OK
+migrator-1  |   Applying db.0045_issueactivity_epoch_workspacemember_issue_props_and_more... OK
+migrator-1  |   Applying db.0046_label_sort_order_alter_analyticview_created_by_and_more... OK
+migrator-1  |   Applying db.0047_webhook_api[REDACTED]_description_api[REDACTED]_expired_at_and_more... OK
+migrator-1  |   Applying db.0048_auto_20231116_0713... OK
+migrator-1  |   Applying db.0049_auto_20231116_0713... OK
+migrator-1  |   Applying db.0050_user_use_case_alter_workspace_organization_size... OK
+migrator-1  |   Applying db.0051_cycle_external_id_cycle_external_source_and_more... OK
+migrator-1  |   Applying db.0052_auto_20231220_1141... OK
+migrator-1  |   Applying db.0053_auto_20240102_1315... OK
+migrator-1  |   Applying db.0054_dashboard_widget_dashboardwidget... OK
+migrator-1  |   Applying db.0055_auto_20240108_0648... OK
+migrator-1  |   Applying db.0056_usernotificationpreference_emailnotificationlog... OK
+migrator-1  |   Applying db.0057_auto_20240122_0901... OK
+migrator-1  |   Applying db.0058_alter_moduleissue_issue_and_more... OK
+migrator-1  |   Applying db.0059_auto_20240208_0957... OK
+migrator-1  |   Applying db.0060_cycle_progress_snapshot... OK
+migrator-1  |   Applying db.0061_project_logo_props... OK
+migrator-1  |   Applying db.0062_cycle_archived_at_module_archived_at_and_more... OK
+migrator-1  |   Applying db.0063_state_is_triage_alter_state_group... OK
+migrator-1  |   Applying db.0064_auto_20240409_1134... OK
+migrator-1  |   Applying db.0065_auto_20240415_0937... OK
+migrator-1  |   Applying db.0066_account_id_[REDACTED]_cycle_logo_props_module_logo_props... OK
+migrator-1  |   Applying db.0067_issue_estimate... OK
+migrator-1  |   Applying db.0068_remove_pagelabel_project_remove_pagelog_project_and_more... OK
+migrator-1  |   Applying db.0069_alter_account_provider_and_more... OK
+migrator-1  |   Applying db.0070_api[REDACTED]_is_service_exporterhistory_filters_and_more... OK
+migrator-1  |   Applying db.0071_rename_issueproperty_issueuserproperty_and_more... OK
+migrator-1  |   Applying db.0072_issueattachment_external_id_and_more... OK
+migrator-1  |   Applying db.0073_alter_commentreaction_unique_together_and_more... OK
+migrator-1  |   Applying db.0074_deploy_board_and_project_issues... OK
+migrator-1  |   Applying db.0075_alter_fileasset_asset... OK
+migrator-1  |   Applying db.0076_alter_projectmember_role_and_more... OK
+migrator-1  |   Applying db.0077_draftissue_cycle_user_timezone_project_user_timezone_and_more... OK
+migrator-1  |   Applying db.0078_fileasset_comment_fileasset_entity_type_and_more... OK
+migrator-1  |   Applying db.0079_auto_20241009_0619... OK
+migrator-1  |   Applying db.0080_fileasset_draft_issue_alter_fileasset_entity_type... OK
+migrator-1  |   Applying db.0081_remove_globalview_created_by_and_more... OK
+migrator-1  |   Applying db.0082_alter_issue_managers_alter_cycleissue_issue_and_more... OK
+migrator-1  |   Applying db.0083_device_workspace_timezone_and_more... OK
+migrator-1  |   Applying db.0084_remove_label_label_unique_name_project_when_deleted_at_null_and_more... OK
+migrator-1  |   Applying db.0085_intake_intakeissue_remove_inboxissue_created_by_and_more... OK
+migrator-1  |   Applying db.0086_issueversion_alter_teampage_unique_together_and_more... OK
+migrator-1  |   Applying db.0087_remove_issueversion_description_and_more... OK
+migrator-1  |   Applying db.0088_sticky_sort_order_workspaceuserlink... OK
+migrator-1  |   Applying db.0089_workspacehomepreference_and_more... OK
+migrator-1  |   Applying db.0090_rename_dashboard_deprecateddashboard_and_more... OK
+migrator-1  |   Applying db.0091_issuecomment_edited_at_and_more... OK
+migrator-1  |   Applying db.0092_alter_deprecateddashboardwidget_unique_together_and_more... OK
+migrator-1  |   Applying db.0093_page_moved_to_page_page_moved_to_project_and_more... OK
+migrator-1  |   Applying db.0094_auto_20250425_0902... OK
+migrator-1  |   Applying db.0095_page_external_id_page_external_source... OK
+migrator-1  |   Applying db.0096_user_is_email_valid_user_masked_at... OK
+migrator-1  |   Applying db.0097_project_external_id_project_external_source... OK
+migrator-1  |   Applying db.0098_profile_is_app_rail_docked_and_more... OK
+migrator-1  |   Applying db.0099_profile_background_color_profile_goals_and_more... OK
+migrator-1  |   Applying db.0100_profile_has_marketing_email_consent_and_more... OK
+migrator-1  |   Applying db.0101_description_descriptionversion... OK
+migrator-1  |   Applying db.0102_page_sort_order_pagelog_entity_type_and_more... OK
+migrator-1  |   Applying db.0103_fileasset_asset_entity_type_idx_and_more... OK
+migrator-1  |   Applying db.0104_cycleuserproperties_rich_filters_and_more... OK
+migrator-1  |   Applying db.0105_alter_project_cycle_view_and_more... OK
+migrator-1  |   Applying db.0106_auto_20250912_0845... OK
+migrator-1  | {"levelname": "INFO", "asctime": "2026-07-12 12:11:22,081", "module": "filter_migrations", "name": "plane.api.filters.migration", "message": "Starting filters to rich_filters migration for all models"}
+migrator-1  | {"levelname": "INFO", "asctime": "2026-07-12 12:11:22,085", "module": "filter_migrations", "name": "plane.api.filters.migration", "message": "No IssueView records need migration"}
+migrator-1  | {"levelname": "INFO", "asctime": "2026-07-12 12:11:22,087", "module": "filter_migrations", "name": "plane.api.filters.migration", "message": "No WorkspaceUserProperties records need migration"}
+migrator-1  | {"levelname": "INFO", "asctime": "2026-07-12 12:11:22,090", "module": "filter_migrations", "name": "plane.api.filters.migration", "message": "No ModuleUserProperties records need migration"}
+migrator-1  | {"levelname": "INFO", "asctime": "2026-07-12 12:11:22,092", "module": "filter_migrations", "name": "plane.api.filters.migration", "message": "No IssueUserProperty records need migration"}
+migrator-1  | {"levelname": "INFO", "asctime": "2026-07-12 12:11:22,095", "module": "filter_migrations", "name": "plane.api.filters.migration", "message": "No CycleUserProperties records need migration"}
+migrator-1  | {"levelname": "INFO", "asctime": "2026-07-12 12:11:22,096", "module": "filter_migrations", "name": "plane.api.filters.migration", "message": "Migration completed for all models. Total updated: 0, Total errors: 0"}
+migrator-1  |   Applying db.0107_migrate_filters_to_rich_filters... OK
+migrator-1  |   Applying db.0108_alter_issueactivity_issue_comment... OK
+migrator-1  |   Applying db.0109_issuecomment_description_and_parent_id... OK
+migrator-1  |   Applying db.0110_workspaceuserproperties_navigation_control_preference_and_more... OK
+migrator-1  |   Applying db.0111_notification_notif_receiver_status_idx_and_more... OK
+migrator-1  | {"levelname": "INFO", "asctime": "2026-07-12 12:11:25,093", "module": "0112_auto_20251124_0603", "name": "plane.migrations", "message": "Updated 0 triage states."}
+migrator-1  | {"levelname": "INFO", "asctime": "2026-07-12 12:11:25,095", "module": "0112_auto_20251124_0603", "name": "plane.migrations", "message": "Projects to update: 0"}
+migrator-1  | {"levelname": "INFO", "asctime": "2026-07-12 12:11:25,106", "module": "0112_auto_20251124_0603", "name": "plane.migrations", "message": "Updated 0 issues."}
+migrator-1  |   Applying db.0112_auto_20251124_0603... OK
+migrator-1  |   Applying db.0113_webhook_version... OK
+migrator-1  |   Applying db.0114_projectuserproperty_delete_issueuserproperty_and_more... OK
+migrator-1  |   Applying db.0115_auto_20260105_1406... OK
+migrator-1  |   Applying db.0116_workspacemember_explored_features_and_more... OK
+migrator-1  |   Applying db.0117_rename_description_draftissue_description_json_and_more... OK
+migrator-1  |   Applying db.0118_remove_workspaceuserproperties_product_tour_and_more... OK
+migrator-1  |   Applying db.0119_alter_estimatepoint_key... OK
+migrator-1  |   Applying db.0120_issueview_archived_at... OK
+migrator-1  |   Applying db.0121_alter_estimate_type... OK
+migrator-1  |   Applying django_celery_beat.0001_initial... OK
+migrator-1  |   Applying django_celery_beat.0002_auto_20161118_0346... OK
+migrator-1  |   Applying django_celery_beat.0003_auto_20161209_0049... OK
+migrator-1  |   Applying django_celery_beat.0004_auto_20170221_0000... OK
+migrator-1  |   Applying django_celery_beat.0005_add_solarschedule_events_choices... OK
+migrator-1  |   Applying django_celery_beat.0006_auto_20180322_0932... OK
+migrator-1  |   Applying django_celery_beat.0007_auto_20180521_0826... OK
+migrator-1  |   Applying django_celery_beat.0008_auto_20180914_1922... OK
+migrator-1  |   Applying django_celery_beat.0006_auto_20180210_1226... OK
+migrator-1  |   Applying django_celery_beat.0006_periodictask_priority... OK
+migrator-1  |   Applying django_celery_beat.0009_periodictask_headers... OK
+migrator-1  |   Applying django_celery_beat.0010_auto_20190429_0326... OK
+migrator-1  |   Applying django_celery_beat.0011_auto_20190508_0153... OK
+migrator-1  |   Applying django_celery_beat.0012_periodictask_expire_seconds... OK
+migrator-1  |   Applying django_celery_beat.0013_auto_20200609_0727... OK
+migrator-1  |   Applying django_celery_beat.0014_remove_clockedschedule_enabled... OK
+migrator-1  |   Applying django_celery_beat.0015_edit_solarschedule_events_choices... OK
+migrator-1  |   Applying django_celery_beat.0016_alter_crontabschedule_timezone... OK
+migrator-1  |   Applying django_celery_beat.0017_alter_crontabschedule_month_of_year... OK
+migrator-1  |   Applying django_celery_beat.0018_improve_crontab_helptext... OK
+migrator-1  |   Applying license.0001_initial... OK
+migrator-1  |   Applying license.0002_rename_version_instance_current_version_and_more... OK
+migrator-1  |   Applying license.0003_alter_changelog_title_alter_changelog_version_and_more... OK
+migrator-1  |   Applying license.0004_changelog_deleted_at_instance_deleted_at_and_more... OK
+migrator-1  |   Applying license.0005_rename_product_instance_edition_and_more... OK
+migrator-1  |   Applying license.0006_instance_is_current_version_deprecated... OK
+migrator-1  |   Applying sessions.0001_initial... OK
+
+--- WEB (last 10 lines) ---
+web-1  | 127.0.0.1 - - [12/Jul/2026:12:12:15 +0000] "GET / HTTP/1.1" 200 6474 "-" "curl/8.12.1"
+web-1  | 127.0.0.1 - - [12/Jul/2026:12:12:45 +0000] "GET / HTTP/1.1" 200 6474 "-" "curl/8.12.1"
+web-1  | 127.0.0.1 - - [12/Jul/2026:12:13:15 +0000] "GET / HTTP/1.1" 200 6474 "-" "curl/8.12.1"
+web-1  | 172.21.0.14 - - [12/Jul/2026:12:13:18 +0000] "HEAD / HTTP/1.1" 200 0 "-" "curl/8.18.0"
+web-1  | 172.21.0.14 - - [12/Jul/2026:12:13:18 +0000] "HEAD / HTTP/1.1" 200 0 "-" "curl/8.18.0"
+web-1  | 172.21.0.14 - - [12/Jul/2026:12:13:38 +0000] "GET / HTTP/1.1" 200 6474 "-" "curl/8.18.0"
+web-1  | 127.0.0.1 - - [12/Jul/2026:12:13:45 +0000] "GET / HTTP/1.1" 200 6474 "-" "curl/8.12.1"
+web-1  | 127.0.0.1 - - [12/Jul/2026:12:14:15 +0000] "GET / HTTP/1.1" 200 6474 "-" "curl/8.12.1"
+web-1  | 127.0.0.1 - - [12/Jul/2026:12:14:45 +0000] "GET / HTTP/1.1" 200 6474 "-" "curl/8.12.1"
+web-1  | 127.0.0.1 - - [12/Jul/2026:12:15:16 +0000] "GET / HTTP/1.1" 200 6474 "-" "curl/8.12.1"
+
+--- PROXY (last 10 lines) ---
+proxy-1  | {"level":"info","ts":1783858063.9175746,"logger":"admin","msg":"admin endpoint started","address":"localhost:2019","enforce_origin":false,"origins":["//localhost:2019","//[::1]:2019","//127.0.0.1:2019"]}
+proxy-1  | {"level":"warn","ts":1783858063.9182458,"logger":"http.auto_https","msg":"server is listening only on the HTTP port, so no automatic HTTPS will be applied to this server","server_name":"srv0","http_port":80}
+proxy-1  | {"level":"info","ts":1783858063.9183455,"logger":"tls.cache.maintenance","msg":"started background certificate maintenance","cache":"0xc0003bc780"}
+proxy-1  | {"level":"warn","ts":1783858063.923493,"logger":"http","msg":"HTTP/2 skipped because it requires TLS","network":"tcp","addr":":80"}
+proxy-1  | {"level":"warn","ts":1783858063.9235158,"logger":"http","msg":"HTTP/3 skipped because it requires TLS","network":"tcp","addr":":80"}
+proxy-1  | {"level":"info","ts":1783858063.9235198,"logger":"http.log","msg":"server running","name":"srv0","protocols":["h1","h2","h3"]}
+proxy-1  | {"level":"info","ts":1783858063.924845,"msg":"autosaved config (load with --resume flag)","file":"/config/caddy/autosave.json"}
+proxy-1  | {"level":"info","ts":1783858063.924866,"msg":"serving initial configuration"}
+proxy-1  | {"level":"info","ts":1783858063.9257638,"logger":"tls","msg":"cleaning storage unit","storage":"FileStorage:/data/caddy"}
+proxy-1  | {"level":"info","ts":1783858063.9271784,"logger":"tls","msg":"finished cleaning storage units"}
+
+--- WORKER (last 10 lines) ---
+worker-1  | 
+worker-1  | {"levelname": "WARNING", "asctime": "2026-07-12 12:11:59,762", "module": "warnings", "name": "py.warnings", "message": "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine\nwhether broker connection retries are made during startup in Celery 6.0 and above.\nIf you wish to retain the existing behavior for retrying connections on startup,\nyou should set broker_connection_retry_on_startup to True.\n  warnings.warn(\n"}
+worker-1  | [2026-07-12 12:11:59,773: INFO/MainProcess] mingle: searching for neighbors
+worker-1  | {"levelname": "INFO", "asctime": "2026-07-12 12:11:59,773", "module": "mingle", "name": "celery.worker.consumer.mingle", "message": "mingle: searching for neighbors"}
+worker-1  | [2026-07-12 12:12:00,840: INFO/MainProcess] mingle: all alone
+worker-1  | {"levelname": "INFO", "asctime": "2026-07-12 12:12:00,840", "module": "mingle", "name": "celery.worker.consumer.mingle", "message": "mingle: all alone"}
+worker-1  | [2026-07-12 12:12:03,656: INFO/MainProcess] Task plane.license.bgtasks.tracer.instance_traces[7c53b333-c6c4-46e9-8be8-3383f0ef570f] received
+worker-1  | {"levelname": "INFO", "asctime": "2026-07-12 12:12:03,656", "module": "strategy", "name": "celery.worker.strategy", "message": "Task plane.license.bgtasks.tracer.instance_traces[7c53b333-c6c4-46e9-8be8-3383f0ef570f] received", "data": {"id": "7c53b333-c6c4-46e9-8be8-3383f0ef570f", "name": "plane.license.bgtasks.tracer.instance_traces", "args": "()", "kwargs": "{}", "eta": null}}
+worker-1  | [2026-07-12 12:15:00,051: INFO/MainProcess] Task plane.bgtasks.email_notification_task.stack_email_notification[b7f8ed49-8011-40a8-8268-b1550103b235] received
+worker-1  | {"levelname": "INFO", "asctime": "2026-07-12 12:15:00,051", "module": "strategy", "name": "celery.worker.strategy", "message": "Task plane.bgtasks.email_notification_task.stack_email_notification[b7f8ed49-8011-40a8-8268-b1550103b235] received", "data": {"id": "b7f8ed49-8011-40a8-8268-b1550103b235", "name": "plane.bgtasks.email_notification_task.stack_email_notification", "args": "()", "kwargs": "{}", "eta": null}}

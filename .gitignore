@@ -1,0 +1,74 @@
+# ============================================================
+# Local environment and secrets — NEVER commit
+# ============================================================
+.env
+.env.*
+!.env.example
+plane.env
+*.token
+*.apikey
+*.api-key
+*.secret
+*.key
+api-keys/
+tokens/
+secrets/
+
+# ============================================================
+# Playwright auth state — contains session cookies
+# ============================================================
+.playwright/
+auth-state.json
+auth/
+playwright/.auth/
+storage-state/
+storageState*.json
+**/auth.json
+
+# ============================================================
+# Dependencies and caches
+# ============================================================
+node_modules/
+node_modules/.cache/
+playwright/.cache/
+ms-playwright/
+
+# ============================================================
+# Python virtual environments and cache
+# ============================================================
+.venv/
+.venv-ci/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ============================================================
+# Generated test artifacts (root-level only)
+# ============================================================
+/test-results/
+/playwright-report/
+/reports/
+/archive/
+htmlcov/
+coverage.xml
+.coverage
+screenshots/_tmp/
+traces/_tmp/
+videos/_tmp/
+
+# ============================================================
+# IDE and OS files
+# ============================================================
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~

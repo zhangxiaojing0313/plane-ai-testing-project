@@ -1,0 +1,18 @@
+{
+  "name": "plane-ai-testing-project",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-assisted end-to-end testing practice for Plane Community Edition",
+  "scripts": {
+    "test:ui": "playwright test",
+    "test:ui:headed": "playwright test --headed",
+    "test:ui:list": "playwright test --list",
+    "report:ui": "playwright show-report reports/playwright-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.8.3"
+  }
+}

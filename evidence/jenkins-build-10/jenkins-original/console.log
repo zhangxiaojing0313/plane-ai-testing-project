@@ -1,0 +1,509 @@
+Started by user [8mha:////4DJpW5R2ZHQ0JOfGQJN3IUXeng0SXq/jWhZfNQ/1a9EKAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy2EgZu/dLi1CL9xJTczDwA9svhPMAAAAA=[0mtester
+[8mha:////4MnVQWhJdEl0OC1JEPdBP+mR4QCg+pldvSniRuZOL3UaAAAAoh+LCAAAAAAAAP9tjTEOwjAQBM8BClpKHuFItIiK1krDC0x8GCfWnbEdkooX8TX+gCESFVvtrLSa5wtWKcKBo5UdUu8otU4GP9jS5Mixv3geZcdn2TIl9igbHBs2eJyx4YwwR1SwULBGaj0nRzbDRnX6rmuvydanHMu2V1A5c4MHCFXMWcf8hSnC9jqYxPTz/BXAFEIGsfuclm8zQVqFvQAAAA==[0m[Pipeline] Start of Pipeline
+[8mha:////4At3pEk5sxaI9XU3y89j3CVFbQ3PomqXnEQwGVSHpIEyAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycohUghExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jduZBmjwAAAAA==[0m[Pipeline] node
+Running on [8mha:////4BWS95huGeNKPEA4rlTE2sA4QURqjcLr93GnuYGfiCbtAAAArB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyhEgZl/eT83ILSktQi/QKgQamqRi6FiUCiqDQvL7UIyCgz0gcAUZ7zRNgAAAA=[0mplane-qa-runner-v2 in /home/jenkins/agent/workspace/plane-qa-pipeline
+[8mha:////4IhLwYuf4CEhWRB8edmFH94c/FZqH60wfSOYCyaa/lXEAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gA0xsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfoP95RwAAAAA==[0m[Pipeline] {
+[8mha:////4P6AEhajjM9sZJR50NMztzZJ2kAxtz1xzWq5MCXmbgywAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gQkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jc09154wAAAAA==[0m[Pipeline] withEnv
+[8mha:////4Ogou4wbG9RzQCFx4Twi2hB77H3P5JwhLFs+Rl2xKwkwAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0ggUxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jek7ggRwAAAAA==[0m[Pipeline] {
+[8mha:////4DtbZslqcVvuTq4leK5/e1ZnaQS7o5sXe175pX1X7hnrAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gwExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jcChmMxwAAAAA==[0m[Pipeline] stage
+[8mha:////4O16ieCB1DJxXZkO4EKk4lJR1eIXXqrciPwGMJqYQr0mAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0BAkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfpX/cvwAAAAA==[0m[Pipeline] { (1. Checkout / Sync Source)
+[8mha:////4Be63XkQ8SioHd4FzNEqcwW6Viph8QCwlxI96KBYonYlAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0BSEm1igLJwhJCGmj/9skpZ04EVfjDgQqMWHJkm3Jes8X1CnCkaLjrcXOY9Ke92F0JfGJYncNNPGWLlwTJgqWSztJMva0VEnZwiJWwUrA2qIOlDy6DBvRqrtqgkLXnHMs20FA5c0AD2CikLOK+VvmCNvbaBLhj/MXAHOfge2K959f/QbB16AVwAAAAA==[0m[Pipeline] script
+[8mha:////4FRsZFmVdpPsAyZC7IWIANFE1SZl2OxYMGP3nmzTYVv/AAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQDJUJUtJYbXmBiY5xYd8G+kFS8iK/xBwKRqNhqZ6XVPF9Q5gQHSl42DtuAuQ6yi72fmhwotZdIg2zoLGvCTNFJ7QZN1h1n1MQO5ogCFgqWDutIOaBnWKnG3E0VDfrqxGna9gqKYG/wAKEmM5vEXxgTrK+9zYQ/z18BjB2D2DEU283nWL4Bsam+msEAAAA=[0m[Pipeline] {
+[8mha:////4CFpP/CbpjyoW+RMYG9E3IYTwE9shUBXfB2cBI1ZS2EcAAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJCakRFa6XhBSYxxo5159gOTsWL+Bp/IBCJii1WO9vM8wXrGODIQaNV1BuKrUHvRj0vzBz6q+OMli/YMkV2ChuVG+7UacGGk4IlRQkrARtFreNoSCfYCivvsnKSdHVOYf4OAkrTDfCAQszmJEP6whRgdxu7yPTz/BXA5BOU9f5TtX8D0loxuL4AAAA=[0m[Pipeline] sh
++ echo Syncing source from /opt/plane-source to workspace...
+Syncing source from /opt/plane-source to workspace...
++ rsync -a --info=stats2 --exclude=.env --exclude=.venv --exclude=node_modules --exclude=.playwright --exclude=reports --exclude=evidence --exclude=test-results --exclude=playwright-report --exclude=__pycache__ --exclude=.pytest_cache --exclude=*.pyc --exclude=.git /opt/plane-source/ /home/jenkins/agent/workspace/plane-qa-pipeline/
+
+Number of files: 81 (reg: 65, dir: 16)
+Number of created files: 0
+Number of deleted files: 0
+Number of regular files transferred: 0
+Total file size: 226,850 bytes
+Total transferred file size: 0 bytes
+Literal data: 0 bytes
+Matched data: 0 bytes
+File list size: 0
+File list generation time: 0.007 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 2,525
+Total bytes received: 34
+
+sent 2,525 bytes  received 34 bytes  5,118.00 bytes/sec
+total size is 226,850  speedup is 88.65
++ echo Source synced to /home/jenkins/agent/workspace/plane-qa-pipeline
+Source synced to /home/jenkins/agent/workspace/plane-qa-pipeline
+[8mha:////4Gy1T6d3YH78ggE0D2lw2PNXZHCqOyW+IOl0oaUp2dO/AAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICtIgqreWGF5jYGCfWnbEdkooX8TX+QCASFVusdraZ5wuWKcKRo8XWUOcoNQ6D7+20cODYXTwP2PIZG6bE3qA0g2Rt6hklZwNzihIWAlaGGs/Jkc2wFq26q8orstUpx+k7CCidvsEDCjGZs4r5C2OEzbXXienn+SuAMYQM5W7/qe0bsgYiW74AAAA=[0m[Pipeline] }
+[8mha:////4K/RDYKg7RCeqUeok362Zbtv+UrnBX1j0PhdapzvPL2kAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRokKIitZKwwtMYowT6y7YF5KKF/E1/kBEJCq22plmXm8sU8SRo1ONpdZTqrzqQu+mpwaO7TXwoBq+qIopcbCqtEPJtT3NWLJYzMtyLDRWlqrAyZMTrHVjHqYIhlxxlji5g0bu6zueyPRUFhPlC2PE5tbXienX+RvA2HWCfLsTZPsP6C1U670AAAA=[0m[Pipeline] // script
+[8mha:////4DJHklOhY1/OUNJLsy2B9p5F9oBwKJEcFxW3CJeoNsMQAAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIREgUSoqK10vACkxjjxLoL9oWk4kV8jT8QEYmKrXammdcbyxRx5OhUY6n1lCqvutC76amBY3sNPKiGL6piShysKu1Qcm1PM5YsFvOyHAuNlaUqcPLkBGvdmIcpgiFXnCVO7qCR+/qOJzI9lcVE+cIYsbn1dWL6df4GMHadIN/uBNn+A27Bcy69AAAA[0m[Pipeline] }
+[8mha:////4HaiYRirw3me6qWwzGSYlQu0f+tzy6hW5V3imfM4GXg7AAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRBaJAVLRWGl5gEmOcWHfBvpBUvIiv8QciIlGx1c4083pjmSKOHJ1qLLWeUuVVF3o3PTVwbK+BB9XwRVVMiYNVpR1Kru1pxpLFYl6WY6GxslQFTp6cYK0b8zBFMOSKs8TJHTRyX9/xRKanspgoXxgjNre+Tky/zt8Axq4T5NudINt/AE/1rIO9AAAA[0m[Pipeline] // stage
+[8mha:////4OaUv1WLWrXa+SltJH+KAc3KipaSWzqtRbawFBIdPzFZAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQjmjSIitZywwtMYowT6y7YF5KKF/E1/oAhEhVb7ay0mucLyhThQNHJzmLvMTVeDmF0ucmJYn8JNMmOzrIhTBSs1HbS1NrjgprYwhJRwErB2mITKHl0DBvVmbupgkFXnTjmba+g8O0NHiBUNrOJ/IU5wvY6tonw5/krgHlgEDVDsas/x/INar4f38EAAAA=[0m[Pipeline] stage
+[8mha:////4EP50SfSkX/XYqsVZrDHKIg5ihuEpD9VIBh4KrLgcA1mAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohULDAgpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD1+IXOLCAAAA[0m[Pipeline] { (2. Environment Preflight)
+[8mha:////4HfgxEQcHRnvQqPijNIggAYxVUJXODp7yq+w/GE7EgI3AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiKpAQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUG53n9qHNxXfVKy+AAAA[0m[Pipeline] sh
++ echo === Preflight ===
+=== Preflight ===
++ hostname
++ echo Host: 9275f26b72ae
+Host: 9275f26b72ae
++ whoami
++ echo User: jenkins
+User: jenkins
++ echo Workspace: /home/jenkins/agent/workspace/plane-qa-pipeline
+Workspace: /home/jenkins/agent/workspace/plane-qa-pipeline
++ java -version
++ head -1
++ echo Java: openjdk version "17.0.19" 2026-04-21
+Java: openjdk version "17.0.19" 2026-04-21
++ git --version
++ echo Git: git version 2.47.3
+Git: git version 2.47.3
++ /home/jenkins/qa-venv/bin/python3 --version
++ echo Python: Python 3.13.5
+Python: Python 3.13.5
++ node --version
++ echo Node: v22.23.1
+Node: v22.23.1
++ docker --version
++ echo Docker: Docker version 27.3.1, build ce12230
+Docker: Docker version 27.3.1, build ce12230
++ curl -sI --max-time 10 http://host.docker.internal:8090
++ head -1
++ echo Plane reachable: HTTP/1.1 200 OK
+Plane reachable: HTTP/1.1 200 OK
+[8mha:////4Jf/QbkyTeXwxh4WFSoy+LmjZEXbQF+2BDN+aDfTAD46AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiKoQQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGMIGcrt/lO7N9Jjga++AAAA[0m[Pipeline] }
+[8mha:////4Ln0DMeQUo4yPco1JbI+K6sGN52n7lZju8AOZ6MnUoDTAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICFDQoFa3lhheYxBgn1l2wHZyKF/E1/oBFJCq2WO1sM683LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDQMEcr9Ntfu8AERGGHOvgAAAA==[0m[Pipeline] // stage
+[8mha:////4KfeC8T3BbwLfqAH7b+51hBKMyMKGxs17JdixVbZoJ8BAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQjKGgQFa3lhheY2Bgn1l2wLyQVL+Jr/IFAJCq22llpNc8XlDnBgZKXjcM2YK6D7GLvpyYHSu0l0iAbOsuaMFN0UrtBk3XHGTWxgzmigIWCpcM6Ug7oGVaqMXdTRYO+OnGatr2CItgbPECoycwm8RfGBOtrbzPhz/NXAGPHIHYMxXbzOZZvT5Ty88EAAAA=[0m[Pipeline] stage
+[8mha:////4G81aLz2lBuOsq40sod7voARchTiO5ZZy8nWGkhI0nhUAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycohUdEVMrFEXThCaEJJG/7dJSjpxIq7GHWipxIQHy7ZkvdcbyhjgRMFwp7GzGFvLez+aOfFMobt5ytzRlbeEkbzmjc4NKX1ea0NJw6qCwUbAVmPrKVo0CXbCyYesvERTXVKYt6MAZtUATyjETE4ypG+ZAuzvo4qEP85fAEx9AlYfFquXZ/kBAsTc3cIAAAA=[0m[Pipeline] { (3. Python Environment)
+[8mha:////4EzlvbTrm6I+FllWHaH7mIfcgCiS7Efl7cnHqOoWy7H7AAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeggyE0vHypah8QSYIEKY/wkQSeWJvJp3EM2MlVvs7NvmPV+wjgGOFDSzCgeDsTPMu0mXxTKF4eooM0sX1hFGcooJlQX16rSgoKRgSVXDisNGYecoGtQJttzKu2ycRN2cUyjfgUNt+hEeUPFiTjKkL8wBdrepj4Q/z18BzD5B3baf2vs3w5BRkb4AAAA=[0m[Pipeline] sh
++ echo Setting up Python venv...
+Setting up Python venv...
++ rsync -a --info=stats2 --exclude=.git --exclude=__pycache__ /home/jenkins/qa-venv/ /home/jenkins/agent/workspace/plane-qa-pipeline/.venv-ci/
+
+Number of files: 1,567 (reg: 1,399, dir: 164, link: 4)
+Number of created files: 1,567 (reg: 1,399, dir: 164, link: 4)
+Number of deleted files: 0
+Number of regular files transferred: 1,399
+Total file size: 16,653,662 bytes
+Total transferred file size: 16,653,629 bytes
+Literal data: 16,653,629 bytes
+Matched data: 0 bytes
+File list size: 0
+File list generation time: 0.001 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 16,747,278
+Total bytes received: 27,692
+
+sent 16,747,278 bytes  received 27,692 bytes  11,183,313.33 bytes/sec
+total size is 16,653,662  speedup is 0.99
++ /home/jenkins/agent/workspace/plane-qa-pipeline/.venv-ci/bin/pip install -r requirements.txt --quiet
+[8mha:////4Ox6hFPIM92X5ksOE53PkcVTFUX7mnXqpCp6zK7PaKaSAAAApB+LCAAAAAAAAP9tjbEOwiAURV9rHFwd/QiaNG7GyZWw+AXYIkLJexSodPKL/DX/QbSJk3e4uecu5/mCdQxwpKCZVTgYjJ1h3k26LJYpDFdHmVm6sI4wklNMqCyoV6cFBSUFS6oaVhw2CjtH0aBOsOVW3mXjJOrmnEL5Dhxq04/wgIoXc5IhfWEOsLtNfST8ef4KYPY+Qd3uP9W+Ad3NsHm+AAAA[0m[Pipeline] }
+[8mha:////4D4MYBAc+C1QORomO4MSni94VSigoeKMS1GqkkgDKJ3tAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIikKgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGMIGcrd/lPbN8JP5Su+AAAA[0m[Pipeline] // stage
+[8mha:////4EO2sJeoTGW8bDK5K6mPQs1Jn0E/Ek5a55gqq7AHrLkqAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQjUaRBVLSWG15gEmOcWHfBvpBUvIiv8QcMkajYamel1TxfUKYIB4pOdhZ7j6nxcgijy01OFPtLoEl2dJYNYaJgpbaTptYeF9TEFpaIAlYK1habQMmjY9ioztxNFQy66sQxb3sFhW9v8AChsplN5C/MEbbXsU2EP89fAcwDg6gZil39OZZv96T37sEAAAA=[0m[Pipeline] stage
+[8mha:////4FsD5YaJ8OO9jQEP0EaNEhRU00Xn4NTwAW9fdNbVUmdPAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUYoABMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLku/1sh/lZfAAyQCqkwgAAAA==[0m[Pipeline] { (4. Node Dependencies)
+[8mha:////4Lpob1KK6KBEViymtxylWUEkLzNYPN6bCFOs6SjPuUjTAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIi0YCEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDhnK7+9Q+vAGvZp0gvgAAAA==[0m[Pipeline] sh
++ echo Installing Node dependencies...
+Installing Node dependencies...
++ npm ci --ignore-scripts
+
+added 6 packages, and audited 7 packages in 2s
+
+found 0 vulnerabilities
++ npx playwright install chromium
+[8mha:////4AVgr/IH/LdXh11TkUjcQOUn46FTsuMEIeerYjuJkJV5AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIi0SCEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFBu95/avQGMKkS1vgAAAA==[0m[Pipeline] }
+[8mha:////4MAP1q5HZAKT5oz1OOTq7N/Q+Ji8jIxUjr9ijJo+qMi8AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKCQKJBqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDut7l2hw9mQDtDvgAAAA==[0m[Pipeline] // stage
+[8mha:////4PwVfxHOO4vx8xsuCk/jhJ1C4AO/O/NNZGorCoHTLlSFAAAApx+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQjhESDqGgtN7zAxMY4se6CfSGpeBFf4w8EIlGx1c5Kq3m+oMwJDpS8bBy2AXMdZBd7PzU5UGovkQbZ0FnWhJmik9oNmqw7zqiJHcwRBSwULB3WkXJAz7BSjbmbKhr01YnTtO0VFMHe4AFCTWY2ib8wJlhfe5sJf56/Ahg7BrFjKLabz7F8A/ufhVXBAAAA[0m[Pipeline] stage
+[8mha:////4KyWQX0Wc5rl5GxRvp6h3l5sFD0tBmgohAqd1qbI+uFLAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUwIiYukZZOEFoQkgb/V9+UtqJE3E17kBLJSY8WLYl673eUESGE7ETjcXWY6y96ELvpiQG4vYaaBANXURNGClYoeygyNhqqYqShUVZDisJa4t1oOjRJdjIRj90GTS68px42o4Scm/u8IRMTuSkOX3LyLC99SYS/jh/ATB2CfLDbrb9/Cw+2YMO4MIAAAA=[0m[Pipeline] { (5. UI Credential Smoke)
+[8mha:////4O1O7WzJ4DMJ2sekwPzT1gVg+6XiCS/xtM0Oho/v206GAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycohUoiNiYo26cILQhJA0+r9NUtKJE3E17kBLJSY8WLYl673eUMYAJwqGO42dxdha3vvRzIlnCt3NU+aOrrwljOQ1b3RuSOnzWhtKGlYVDDYCthpbT9GiSbATTj5k5SWa6pLCvB0FMKsGeEIhZnKSIX3LFGB/H1Uk/HH+AmDqE7D6sFi9PMsPfTawssIAAAA=[0m[Pipeline] withCredentials
+Masking supported pattern matches of $PLANE_UI_EMAIL or $PLANE_UI_PASSWORD
+[8mha:////4A562GqaO8X3hFUmywC0ooXxtlThjotR90eMZkFns6R2AAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0KBtiYo2ycILQhJA0+r9NUtKJE3E17kBLJSY8WLYl673eUMUAJwqGOY2dxdha1vvRzIllCt3NU2aOrqwljOQ1EzoLUvq8VkFJw6qihA2HrcbWU7RoEuy4kw9Ze4mmvqQwb0cOpVUDPKHgMznJkL5lCrC/jyoS/jh/ATD1CcqmWeywPKsPBdk7bsIAAAA=[0m[Pipeline] {
+[8mha:////4JBq5bgtWUVkHW6tHtBzqLfuOe5RAn1rf8HNDVLkCBGsAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSABWiSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyu3uU/vwBtZos2m+AAAA[0m[Pipeline] sh
++ set +x
+UI credential format validation passed
+
+Running 1 test using 1 worker
+
+  ✓  1 [setup] › tests/ui/auth.setup.ts:14:8 › Authentication Setup › authenticate and save storage state (19.1s)
+
+  1 passed (21.6s)
+UI credential smoke passed
+[8mha:////4GXqKms28VvWi+eii9OXH4Yh/lCFphJA85e8Mb85v6hOAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSgGgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGMIGcrt/lO7Nxbzd2K+AAAA[0m[Pipeline] }
+[8mha:////4AoqFR4Y1UAMoOeaqMojIFo+0XnBLYNHSx6c8ZjskLP2AAAApB+LCAAAAAAAAP9tjTESwiAURH/iWNhaeghSpLBwrGwZGk+ACSKE+Z8AkVSeyKt5B9HMWLnFzr5t3vMF6xjgSEEzq3AwGDvDvJt0WSxTGK6OMrN0YR1hJKeYUFlQr04LCkoKllQ1rDhsFHaOokGdYMutvMvGSdTNOYXyHTjUph/hARUv5iRD+sIcYHeb+kj48/wVwOx9grrdf6p9AxC1Tze+AAAA[0m[Pipeline] // withCredentials
+[8mha:////4O2pyMwHqowmvGjY6HmMoDAzL1y2iAio7Rm0a7/pA+LbAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiQYOEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFDu9p/avgFTNx6xvgAAAA==[0m[Pipeline] }
+[8mha:////4M5iaLABB0jefu/s5VceDDVEyPDTQ0sadD39bFgxFuDlAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiRIUQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGMIGcrd/lPbN0y1S+O+AAAA[0m[Pipeline] // stage
+[8mha:////4D/8PqgWEpOKRlNfw/T0Zcxd8ziOPo/Pqguq4/u+KCutAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYRDgWgQFa3lhheY2Bgn1l2wLyQVL+Jr/IFAJCq22llpNc8XlDnBgZKXjcM2YK6D7GLvpyYHSu0l0iAbOsuaMFN0UrtBk3XHGTWxgzmigIWCpcM6Ug7oGVaqMXdTRYO+OnGatr2CItgbPECoycwm8RfGBOtrbzPhz/NXAGPHIHYMxXbzOZZv0HJ+W8EAAAA=[0m[Pipeline] stage
+[8mha:////4BB1K+52G3YH5ISaoL0vIVjVP5YJJ9R2tTa8/kYZ90ryAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycogUJDbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5AfdrPt52fxAbb5KxbCAAAA[0m[Pipeline] { (6. Create Temporary CI Environment)
+[8mha:////4KZ4J6xdIBtMC/Giyn9ucA40KS7EX/84eu6PWwhwhT3kAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUIDbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5AfdrPt52fxAdhUMVHCAAAA[0m[Pipeline] withCredentials
+Masking supported pattern matches of $CI_PLANE_API_KEY
+[8mha:////4Av5LWwR5traa435IEKzGmBlcAccLDVtxxVynrRCY78MAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUAjbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5AfdrPt52fxAXzhjwPCAAAA[0m[Pipeline] {
+[8mha:////4M6/I8uYH+nqt7l/qdZJpU3AXJXbGkFqvjMQch/VPfRgAAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSkA5R0VppeIFJjLFj3Tm2g1PxIr7GHwhEomKL1c4283zBOgY4ctBoFfWGYmvQu1HPCzOH/uo4o+ULtkyRncJG5YY7dVqw4aRgSVHCSsBGUes4GtIJtsLKu6ycJF2dU5i/g4DSdAM8oBCzOcmQvjAF2N3GLjL9PH8FMPkEZb3/VO3fhXiFur4AAAA=[0m[Pipeline] sh
++ set +x
+.env created with 5 lines
+Required CI variables are present
+[8mha:////4KAq06Ostprl9d/DO2tpsZwW9+ipE3AKUKaXBh8XjmhrAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSABWiSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwhQ7nbf2r7BlK8YfC+AAAA[0m[Pipeline] }
+[8mha:////4H1Aq2woYdvSLTQ4++IRzNtohTAvctz1gfzqtQ3ga4k3AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiIUSDqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFDu9p/avgFq/vIBvgAAAA==[0m[Pipeline] // withCredentials
+[8mha:////4PIBuNKKXJ6rpCaRNGj+y8TfEodBTCIilMHisAtkK03RAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiJCQKRJXWcsMLTGyME+vO2A5JxYv4Gn8gEImKLVY728zzBcsU4cjRYmuoc5Qah8H3dlo4cOwungds+YwNU2JvUJpBsjb1jJKzgTlFCQsBK0ON5+TIZliLVt1V5RXZ6pTj9B0ElE7f4AGFmMxZxfyFMcLm2uvE9PP8FcAYQoZyt//U9g11fKdTvgAAAA==[0m[Pipeline] }
+[8mha:////4DcZcR+mJUO/zYdwCMevPPSd6b8LEoyAR2QoWZ401qVZAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJCQYGEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFDu9p/avgE2/vbVvgAAAA==[0m[Pipeline] // stage
+[8mha:////4Ep6gNwThKFg5rHNtUCYIoA7OAUNidQsqy3uPKUoMg1XAAAApx+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYTTICSEqGgtN7zAxMY4se6CfSGpeBFf4w8EIlGx1c5Kq3m+oMwJDpS8bBy2AXMdZBd7PzU5UGovkQbZ0FnWhJmik9oNmqw7zqiJHcwRBSwULB3WkXJAz7BSjbmbKhr01YnTtO0VFMHe4AFCTWY2ib8wJlhfe5sJf56/Ahg7BrFlKDa7z7F8AxgjcXzBAAAA[0m[Pipeline] stage
+[8mha:////4HdQP+s5Zta0ioldcD0/FMycvi8qk5riE8wou8mND0qVAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoiUAQaEOrFGXThBaEJIGv1fkpR04kRcjTsQqMSEB8u2ZL3nC6rgoSGvmVXYGwydYYMbdU4ske8vjhKzdGYdYSCnWKtSS1Id59pSVDCrKGHBYamwcxQM6ggrbsVd1E6grk/R5+3AoTTyBg8oeCZH4eO3TB7W11EGwh/nLwCmIUK53WfbbT7P6g0iH00AwgAAAA==[0m[Pipeline] { (7. API Validation)
+[8mha:////4E4U3yRcyhjJkf5xoPtQN86bQAm5g3VGq/g2HT4cdCNpAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICBRWiSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyv32U7vwBvT8cju+AAAA[0m[Pipeline] sh
++ /home/jenkins/agent/workspace/plane-qa-pipeline/.venv-ci/bin/pytest tests/api/test_validation.py -v --junitxml=reports/junit-api-validation.xml --html=reports/api-validation.html --self-contained-html
+============================= test session starts ==============================
+platform linux -- Python 3.13.5, pytest-9.1.1, pluggy-1.6.0 -- /home/jenkins/qa-venv/bin/python3
+cachedir: .pytest_cache
+metadata: {'Python': '3.13.5', 'Platform': 'Linux-7.0.0-27-generic-x86_64-with-glibc2.41', 'Packages': {'pytest': '9.1.1', 'pluggy': '1.6.0'}, 'Plugins': {'html': '4.2.0', 'metadata': '3.1.1'}, 'CI': 'true', 'BUILD_NUMBER': '10', 'BUILD_ID': '10', 'BUILD_URL': 'http://192.168.146.132:8081/job/plane-qa-pipeline/10/', 'NODE_NAME': 'plane-qa-runner-v2', 'JOB_NAME': 'plane-qa-pipeline', 'BUILD_TAG': 'jenkins-plane-qa-pipeline-10', 'EXECUTOR_NUMBER': '0', 'JENKINS_URL': 'http://192.168.146.132:8081/', 'JAVA_HOME': '/opt/java/openjdk', 'WORKSPACE': '/home/jenkins/agent/workspace/plane-qa-pipeline'}
+rootdir: /home/jenkins/agent/workspace/plane-qa-pipeline
+configfile: pytest.ini
+plugins: html-4.2.0, metadata-3.1.1
+collecting ... collected 8 items
+
+tests/api/test_validation.py::TestWorkItemValidation400::test_missing_name_field PASSED [ 12%]
+tests/api/test_validation.py::TestWorkItemValidation400::test_empty_name_field PASSED [ 25%]
+tests/api/test_validation.py::TestWorkItemValidation400::test_name_as_number PASSED [ 37%]
+tests/api/test_validation.py::TestWorkItemValidation400::test_invalid_priority_value PASSED [ 50%]
+tests/api/test_validation.py::TestWorkItemValidation400::test_invalid_state_id PASSED [ 62%]
+tests/api/test_validation.py::TestWorkItemValidation400::test_malformed_json_body PASSED [ 75%]
+tests/api/test_validation.py::TestWorkItemValidation400::test_excessive_title_length PASSED [ 87%]
+tests/api/test_validation.py::TestWorkItemValidation400::test_missing_required_field_and_no_residue PASSED [100%]
+
+- generated xml file: /home/jenkins/agent/workspace/plane-qa-pipeline/reports/junit-api-validation.xml -
+- Generated html report: file:///home/jenkins/agent/workspace/plane-qa-pipeline/reports/api-validation.html -
+============================== 8 passed in 1.65s ===============================
+[8mha:////4D78rubt++W3l/Z2VHPrd17Y1zAner4tF1lQWZSMEmP3AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKCkKgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGMIGcr97lPbN6XnAcu+AAAA[0m[Pipeline] }
+[8mha:////4BOXzd0+yTDxTiExXv+BEA1LMFlGDIS5q9yEe9PVRVWxAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSAAVCqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDut7l2hw/lvZpgvgAAAA==[0m[Pipeline] // stage
+[8mha:////4LuhbESnLc5Xt3F6TteWDOJblZ8BAE0QTD2nuXM9I3P8AAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYTTAA2iorXc8AITG+PEugv2haTiRXyNPxCIRMVWOyut5vmCMic4UPKycdgGzHWQXez91ORAqb1EGmRDZ1kTZopOajdosu44oyZ2MEcUsFCwdFhHygE9w0o15m6qaNBXJ07TtldQBHuDBwg1mdkk/sKYYH3tbSb8ef4KYOwYxI6h2G4+x/INcjuYZsEAAAA=[0m[Pipeline] stage
+[8mha:////4INZtnEvZA4fuVSS1VhxrN+mcVwM46Gnsj+KyNMAhV1pAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycoh0oRNiYo26cILQhJA0+r9NUtKJE3E17kBLJSY8WLYl673eUMYAJwqGO42dxdha3vvRzIlnCt3NU+aOrrwljOQ1b3RuSOnzWhtKGlYVDDYCthpbT9GiSbATTj5k5SWa6pLCvB0FMKsGeEIhZnKSIX3LFGB/H1Uk/HH+AmDqE7D6sFi9PMsP+Y+xAMIAAAA=[0m[Pipeline] { (8. API Regression)
+[8mha:////4NRjf9hMTQ4Rk0YuxwgJ0pKZTHMj1Du7hV/R+CS+ZKIKAAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeghSxcaxsmVoPAEmiBDmfwJEUnkir+YdRDNj5RY7+7Z5zxesY4AjBc2swsFg7AzzbtJlsUxhuDrKzNKFdYSRnGJCZUG9Oi0oKClYUtWw4rBR2DmKBnWCLbfyLhsnUTfnFMp34FCbfoQHVLyYkwzpC3OA3W3qI+HP81cAs09Qt+2n9v4NlEULJr4AAAA=[0m[Pipeline] sh
++ /home/jenkins/agent/workspace/plane-qa-pipeline/.venv-ci/bin/pytest tests/api --ignore=tests/api/test_validation.py -v --junitxml=reports/junit-api-regression.xml --html=reports/api-regression.html --self-contained-html
+============================= test session starts ==============================
+platform linux -- Python 3.13.5, pytest-9.1.1, pluggy-1.6.0 -- /home/jenkins/qa-venv/bin/python3
+cachedir: .pytest_cache
+metadata: {'Python': '3.13.5', 'Platform': 'Linux-7.0.0-27-generic-x86_64-with-glibc2.41', 'Packages': {'pytest': '9.1.1', 'pluggy': '1.6.0'}, 'Plugins': {'html': '4.2.0', 'metadata': '3.1.1'}, 'CI': 'true', 'BUILD_NUMBER': '10', 'BUILD_ID': '10', 'BUILD_URL': 'http://192.168.146.132:8081/job/plane-qa-pipeline/10/', 'NODE_NAME': 'plane-qa-runner-v2', 'JOB_NAME': 'plane-qa-pipeline', 'BUILD_TAG': 'jenkins-plane-qa-pipeline-10', 'EXECUTOR_NUMBER': '0', 'JENKINS_URL': 'http://192.168.146.132:8081/', 'JAVA_HOME': '/opt/java/openjdk', 'WORKSPACE': '/home/jenkins/agent/workspace/plane-qa-pipeline'}
+rootdir: /home/jenkins/agent/workspace/plane-qa-pipeline
+configfile: pytest.ini
+plugins: html-4.2.0, metadata-3.1.1
+collecting ... collected 29 items
+
+tests/api/test_auth.py::TestAuthValidKey::test_valid_api_key_returns_200 PASSED [  3%]
+tests/api/test_auth.py::TestAuthValidKey::test_valid_api_key_user_has_expected_fields PASSED [  6%]
+tests/api/test_auth.py::TestAuthMissingKey::test_no_api_key_header_returns_auth_error PASSED [ 10%]
+tests/api/test_auth.py::TestAuthInvalidKey::test_invalid_api_key_returns_403 PASSED [ 13%]
+tests/api/test_auth.py::TestAuthInvalidKey::test_empty_api_key_returns_403 PASSED [ 17%]
+tests/api/test_members.py::TestMembers::test_list_members_returns_200 PASSED [ 20%]
+tests/api/test_members.py::TestMembers::test_members_have_member_field PASSED [ 24%]
+tests/api/test_members.py::TestCycles::test_list_cycles_returns_200 PASSED [ 27%]
+tests/api/test_members.py::TestModules::test_list_modules_returns_200 PASSED [ 31%]
+tests/api/test_projects.py::TestProjectList::test_list_projects_returns_200 PASSED [ 34%]
+tests/api/test_projects.py::TestProjectList::test_project_list_pagination_structure PASSED [ 37%]
+tests/api/test_projects.py::TestProjectList::test_project_list_contains_target_project PASSED [ 41%]
+tests/api/test_projects.py::TestProjectDetail::test_get_project_detail_returns_200 PASSED [ 44%]
+tests/api/test_projects.py::TestProjectDetail::test_project_detail_has_expected_fields PASSED [ 48%]
+tests/api/test_projects.py::TestProjectNotFound::test_nonexistent_project_returns_404 PASSED [ 51%]
+tests/api/test_states_labels.py::TestStates::test_list_states_returns_200 PASSED [ 55%]
+tests/api/test_states_labels.py::TestStates::test_states_have_expected_fields PASSED [ 58%]
+tests/api/test_states_labels.py::TestLabels::test_list_labels_returns_200 PASSED [ 62%]
+tests/api/test_states_labels.py::TestLabels::test_labels_have_expected_fields PASSED [ 65%]
+tests/api/test_user.py::TestCurrentUser::test_get_current_user_returns_200 PASSED [ 68%]
+tests/api/test_user.py::TestCurrentUser::test_current_user_has_expected_fields PASSED [ 72%]
+tests/api/test_user.py::TestCurrentUser::test_current_user_email_format PASSED [ 75%]
+tests/api/test_work_items.py::TestWorkItemList::test_list_issues_returns_200 PASSED [ 79%]
+tests/api/test_work_items.py::TestWorkItemList::test_issue_list_pagination_structure PASSED [ 82%]
+tests/api/test_work_items.py::TestWorkItemList::test_issue_list_items_have_required_fields PASSED [ 86%]
+tests/api/test_work_items.py::TestWorkItemDetail::test_get_first_issue_detail PASSED [ 89%]
+tests/api/test_work_items.py::TestWorkItemDetail::test_issue_detail_has_expected_fields PASSED [ 93%]
+tests/api/test_work_items.py::TestWorkItemNotFound::test_nonexistent_issue_returns_404 PASSED [ 96%]
+tests/api/test_work_items.py::TestWorkItemLifecycle::test_work_item_full_lifecycle PASSED [100%]
+
+- generated xml file: /home/jenkins/agent/workspace/plane-qa-pipeline/reports/junit-api-regression.xml -
+- Generated html report: file:///home/jenkins/agent/workspace/plane-qa-pipeline/reports/api-regression.html -
+============================== 29 passed in 4.96s ==============================
+[8mha:////4He8wyO3bM2VfXkQ21eUX3qkkj9fXzmB3pPrNapI0ulvAAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeghSZSwcK1uGxhNggghh/idAJJUn8mreQTQzVm6xs2+b93zBOgY4UtDMKhwMxs4w7yZdFssUhqujzCxdWEcYySkmVBbUq9OCgpKCJVUNKw4bhZ2jaFAn2HIr77JxEnVzTqF8Bw616Ud4QMWLOcmQvjAH2N2mPhL+PH8FMHufoG73n2rfmYKm674AAAA=[0m[Pipeline] }
+[8mha:////4L2qxVJ++rtRFD7ShFBfKnp8OLTIm1tc8XEcKe5QjH/GAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSgISEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFDu9p/avgHaAPdtvgAAAA==[0m[Pipeline] // stage
+[8mha:////4HyyowAxodRfEwVhFLxSiIlvUuSq2cGf5UrHq4HEKJT0AAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYRTgYQQFa3lhheY2Bgn1l2wLyQVL+Jr/IFAJCq22llpNc8XlDnBgZKXjcM2YK6D7GLvpyYHSu0l0iAbOsuaMFN0UrtBk3XHGTWxgzmigIWCpcM6Ug7oGVaqMXdTRYO+OnGatr2CItgbPECoycwm8RfGBOtrbzPhz/NXAGPHILYMxWb3OZZvrCgG2sEAAAA=[0m[Pipeline] stage
+[8mha:////4AP9G+mv/gHzaskp7m2P562L1pjfzrghqsMtfanhuAH8AAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoiUBSSEOrFGXThBaEJIGv1fkpR04kRcjTsQqMSEB8u2ZL3nC6rgoSGvmVXYGwydYYMbdU4ske8vjhKzdGYdYSCnWKtSS1Id59pSVDCrKGHBYamwcxQM6ggrbsVd1E6grk/R5+3AoTTyBg8oeCZH4eO3TB7W11EGwh/nLwCmIUK53WfbbT7P6g3QSQCqwgAAAA==[0m[Pipeline] { (9. Rate-Limit Cooldown)
+[8mha:////4I6dLJBU9bBr8ez68CZSrhdSs3TkUTX/cYSmZG3EGvTkAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICDQ2iSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyv32U7vwBk5Fu7e+AAAA[0m[Pipeline] sh
++ echo Waiting for Plane API rate-limit cooldown...
+Waiting for Plane API rate-limit cooldown...
++ sleep 45
+[8mha:////4Cz9UUaPOK4r8CKvpD0M3v4NAS4PWP6OdAGju1qzBLKQAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKCKGgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGMIGcr97lPbN/uuxNG+AAAA[0m[Pipeline] }
+[8mha:////4HqG6PTymDrP+noaTb01Z37CPVtsjsyW/+IlPbOyQAk+AAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSIJAQSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4Ryv821O3wAOZZpSL4AAAA=[0m[Pipeline] // stage
+[8mha:////4HvdHbBwpJXmelYT8Ig3CzGUMxqlyJPagNqknQc53elJAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYTToDSIitZywwtMYowT6y7YF5KKF/E1/oAhEhVb7ay0mucLyhThQNHJzmLvMTVeDmF0ucmJYn8JNMmOzrIhTBSs1HbS1NrjgprYwhJRwErB2mITKHl0DBvVmbupgkFXnTjmba+g8O0NHiBUNrOJ/IU5wvY6tonw5/krgHlgEDVDUe8+x/IN7yFwV8EAAAA=[0m[Pipeline] stage
+[8mha:////4GuOdNXz3ZUHEcwWt+86I6WEBengXSW6EWp74F/8K2nkAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0ARbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5AfdrPt52fxAZRHx0bCAAAA[0m[Pipeline] { (10. Database Tests)
+[8mha:////4OYM5/1dHm283KZ3sVaEd2hUnwst8vUDWpiIMIouTfqcAAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSkQZR0VppeIFJjLFj3Tm2g1PxIr7GHwhEomKL1c4283zBOgY4ctBoFfWGYmvQu1HPCzOH/uo4o+ULtkyRncJG5YY7dVqw4aRgSVHCSsBGUes4GtIJtsLKu6ycJF2dU5i/g4DSdAM8oBCzOcmQvjAF2N3GLjL9PH8FMPkEZb3/VO3fLvzCqr4AAAA=[0m[Pipeline] sh
++ /home/jenkins/agent/workspace/plane-qa-pipeline/.venv-ci/bin/pytest tests/db -v --junitxml=reports/junit-db.xml --html=reports/db-full.html --self-contained-html
+============================= test session starts ==============================
+platform linux -- Python 3.13.5, pytest-9.1.1, pluggy-1.6.0 -- /home/jenkins/qa-venv/bin/python3
+cachedir: .pytest_cache
+metadata: {'Python': '3.13.5', 'Platform': 'Linux-7.0.0-27-generic-x86_64-with-glibc2.41', 'Packages': {'pytest': '9.1.1', 'pluggy': '1.6.0'}, 'Plugins': {'html': '4.2.0', 'metadata': '3.1.1'}, 'CI': 'true', 'BUILD_NUMBER': '10', 'BUILD_ID': '10', 'BUILD_URL': 'http://192.168.146.132:8081/job/plane-qa-pipeline/10/', 'NODE_NAME': 'plane-qa-runner-v2', 'JOB_NAME': 'plane-qa-pipeline', 'BUILD_TAG': 'jenkins-plane-qa-pipeline-10', 'EXECUTOR_NUMBER': '0', 'JENKINS_URL': 'http://192.168.146.132:8081/', 'JAVA_HOME': '/opt/java/openjdk', 'WORKSPACE': '/home/jenkins/agent/workspace/plane-qa-pipeline'}
+rootdir: /home/jenkins/agent/workspace/plane-qa-pipeline
+configfile: pytest.ini
+plugins: html-4.2.0, metadata-3.1.1
+collecting ... collected 19 items
+
+tests/db/test_schema.py::TestDatabaseConnection::test_db_container_accessible PASSED [  5%]
+tests/db/test_schema.py::TestDatabaseConnection::test_issues_table_exists PASSED [ 10%]
+tests/db/test_schema.py::TestDatabaseConnection::test_projects_table_exists PASSED [ 15%]
+tests/db/test_schema.py::TestDatabaseConnection::test_workspaces_table_exists PASSED [ 21%]
+tests/db/test_schema.py::TestDatabaseConnection::test_states_table_exists PASSED [ 26%]
+tests/db/test_schema.py::TestDatabaseConnection::test_issues_columns_exist PASSED [ 31%]
+tests/db/test_schema.py::TestDatabaseConnection::test_column_id_is_pk PASSED [ 36%]
+tests/db/test_schema.py::TestKnownWorkItem::test_known_issue_exists PASSED [ 42%]
+tests/db/test_schema.py::TestKnownWorkItem::test_known_issue_not_deleted PASSED [ 47%]
+tests/db/test_schema.py::TestKnownWorkItem::test_known_issue_project_fk PASSED [ 52%]
+tests/db/test_schema.py::TestKnownWorkItem::test_known_issue_workspace_fk PASSED [ 57%]
+tests/db/test_schema.py::TestKnownWorkItem::test_known_issue_created_at_not_null PASSED [ 63%]
+tests/db/test_schema.py::TestKnownWorkItem::test_no_modification_of_known_item PASSED [ 68%]
+tests/db/test_work_item_consistency.py::TestWorkItemDBConsistency::test_db003_api_create_db_exists PASSED [ 73%]
+tests/db/test_work_item_consistency.py::TestWorkItemDBConsistency::test_db003_workspace_fk PASSED [ 78%]
+tests/db/test_work_item_consistency.py::TestWorkItemDBConsistency::test_db004_api_update_db_sync PASSED [ 84%]
+tests/db/test_work_item_consistency.py::TestWorkItemDBConsistency::test_db005_api_vs_db_consistency PASSED [ 89%]
+tests/db/test_work_item_consistency.py::TestWorkItemDBConsistency::test_db006_delete_mechanism PASSED [ 94%]
+tests/db/test_work_item_consistency.py::TestWorkItemDBConsistency::test_db007_cleanup PASSED [100%]
+
+- generated xml file: /home/jenkins/agent/workspace/plane-qa-pipeline/reports/junit-db.xml -
+- Generated html report: file:///home/jenkins/agent/workspace/plane-qa-pipeline/reports/db-full.html -
+============================== 19 passed in 6.29s ==============================
+[8mha:////4O/JrNEBiT9W0PxjNCSf6E5ELXg//+kMlfoGlIETbOKrAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSAQWiSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwhQ7nbf2r7BsfLY/G+AAAA[0m[Pipeline] }
+[8mha:////4FoC7q5B+PgjCF4SxMSntbXaD3Bc5NjPtpXkfNW6AAJ/AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSIISEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFDu9p/avgGESTJ3vgAAAA==[0m[Pipeline] // stage
+[8mha:////4PHVTSUV4Pj73xOOmGKEf0GZ27I+RJoTeXso8dT2WrLJAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BKWgpeYTTRUKIitZywwtMbIwT6y7YF5KKF/E1/oAhEhVb7ay0mucLqhThQNGJzmLvMbVeDGF0uYmJYn8JNImOzqIlTBSsUHZSZOxxQUVsYUlRwkrC2mIbKHl0DBvZ6buug0ZXnzjmbS+h9OYGDyhkNrOO/IU5wvY6mkT48/wVwDwwFA1D2ew+x+oNMTLu68EAAAA=[0m[Pipeline] stage
+[8mha:////4J+Wk6aOh6TD9lU5U26a7wtSNtw0SPUmqex+AzZ98jOpAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoiUCYRQJ9aoCycITQhJo/9LkpJOnIircQcClZjwYNmWrPd8QRU8NOQ1swp7g6EzbHCjzokl8v3FUWKWzqwjDOQUa1VqSarjXFuKCmYVJSw4LBV2joJBHWHFrbiL2gnU9Sn6vB04lEbe4AEFz+QofPyWycP6OspA+OP8BcA0RCi3+2y7zedZvQGUkOl7wgAAAA==[0m[Pipeline] { (11. Playwright UI Tests)
+[8mha:////4EG+HVccuUklHAZHk6kdultn+Uftv20Hat1HkvtXQ+UKAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycogUJgbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5AfdrPt52fxAdsxXVDCAAAA[0m[Pipeline] withCredentials
+Masking supported pattern matches of $PLANE_UI_EMAIL or $PLANE_UI_PASSWORD
+[8mha:////4BdwtgwHstUbt93KAN/Y5ddkmtFl/G5eVOhf3UzxtnRFAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUsDAgpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYL8sJttPz+LD7WcRxfCAAAA[0m[Pipeline] {
+[8mha:////4DqHOfchz85HSEwr65dOUi7wUKJZ5Zxv96VMaTT0mEjqAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiQUGBqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDhnK//dQuvAFMXHrfvgAAAA==[0m[Pipeline] sh
++ set +x
+UI credentials injected
+
+Running 10 tests using 1 worker
+
+  ✓   1 [setup] › tests/ui/auth.setup.ts:14:8 › Authentication Setup › authenticate and save storage state (11.1s)
+  ✓   2 [chromium-login] › tests/ui/login.spec.ts:11:7 › Login Flow › UI-001: Login with valid credentials and enter QA Lab (12.0s)
+  ✓   3 [chromium-login] › tests/ui/login.spec.ts:24:7 › Login Flow › UI-002: Verify Workspace home shows QA Lab and Plane QA Project (12.0s)
+  ✓   4 [chromium] › tests/ui/project.spec.ts:14:7 › Project › UI-003: Enter Plane QA Project Work Items and verify existing items visible (10.1s)
+  ✓   5 [chromium] › tests/ui/work-item.spec.ts:62:7 › Work Items › UI-004: Open existing work item and verify detail drawer (12.5s)
+Save button disabled with empty title: false
+  ✓   6 [chromium] › tests/ui/work-item.spec.ts:73:7 › Work Items › UI-005: Open New Work Item form and verify empty-title behavior (11.0s)
+  ✓   7 [chromium] › tests/ui/work-item.spec.ts:88:7 › Work Items › UI-006: Create unique work item and verify it appears in list (12.3s)
+Changed state for AUTO-D3-UI-2026-07-14T00-02-54
+Global cleanup: API_CLEANED_2_of_2
+  ✘   8 [chromium] › tests/ui/work-item.spec.ts:99:7 › Work Items › UI-007: Modify created work item and verify persistence (34.9s)
+Changed state for AUTO-D3-UI-2026-07-14T00-03-31
+  ✓   9 [chromium] › tests/ui/work-item.spec.ts:99:7 › Work Items › UI-007: Modify created work item and verify persistence (retry #1) (28.3s)
+Falling back to API cleanup for "AUTO-D3-UI-2026-07-14T00-03-58"
+API cleanup: API_CLEANED_1_of_1
+Global cleanup: API_CLEANED_1_of_1
+  ✓  10 [chromium] › tests/ui/work-item.spec.ts:147:7 › Work Items › UI-008: Delete created work item and verify removal from list (24.6s)
+  ✓  11 [chromium] › tests/ui/workspace.spec.ts:11:7 › Workspace (authenticated) › UI-002b: Workspace loads QA Lab heading and Plane QA Project from storage state (8.3s)
+
+
+  1) [chromium] › tests/ui/work-item.spec.ts:99:7 › Work Items › UI-007: Modify created work item and verify persistence 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('a').filter({ hasText: 'AUTO-D3-UI-2026-07-14T00-02-54' }).first()
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('a').filter({ hasText: 'AUTO-D3-UI-2026-07-14T00-02-54' }).first()
+
+
+      142 |
+      143 |     // Step 5: Verify the work item still exists
+    > 144 |     await expect(page.locator("a").filter({ hasText: testTitle }).first()).toBeVisible({ timeout: 10000 });
+          |                                                                            ^
+      145 |   });
+      146 |
+      147 |   test("UI-008: Delete created work item and verify removal from list", async ({ page }) => {
+        at /home/jenkins/agent/workspace/plane-qa-pipeline/tests/ui/work-item.spec.ts:144:76
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    reports/test-results/work-item-Work-Items-UI-00-58c41-item-and-verify-persistence-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    reports/test-results/work-item-Work-Items-UI-00-58c41-item-and-verify-persistence-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: reports/test-results/work-item-Work-Items-UI-00-58c41-item-and-verify-persistence-chromium/error-context.md
+
+    Error Context: reports/test-results/work-item-Work-Items-UI-00-58c41-item-and-verify-persistence-chromium/error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    reports/test-results/work-item-Work-Items-UI-00-58c41-item-and-verify-persistence-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace reports/test-results/work-item-Work-Items-UI-00-58c41-item-and-verify-persistence-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 flaky
+    [chromium] › tests/ui/work-item.spec.ts:99:7 › Work Items › UI-007: Modify created work item and verify persistence 
+  9 passed (3.1m)
+<testsuites id="" name="" tests="10" failures="0" skipped="0" errors="0" time="183.791168">
+<testsuite name="auth.setup.ts" timestamp="2026-07-14T00:01:20.816Z" hostname="setup" tests="1" failures="0" skipped="0" time="11.097" errors="0">
+<testcase name="Authentication Setup › authenticate and save storage state" classname="auth.setup.ts" time="11.097">
+</testcase>
+</testsuite>
+<testsuite name="login.spec.ts" timestamp="2026-07-14T00:01:20.816Z" hostname="chromium-login" tests="2" failures="0" skipped="0" time="24.066" errors="0">
+<testcase name="Login Flow › UI-001: Login with valid credentials and enter QA Lab" classname="login.spec.ts" time="12.041">
+</testcase>
+<testcase name="Login Flow › UI-002: Verify Workspace home shows QA Lab and Plane QA Project" classname="login.spec.ts" time="12.025">
+</testcase>
+</testsuite>
+<testsuite name="project.spec.ts" timestamp="2026-07-14T00:01:20.816Z" hostname="chromium" tests="1" failures="0" skipped="0" time="10.137" errors="0">
+<testcase name="Project › UI-003: Enter Plane QA Project Work Items and verify existing items visible" classname="project.spec.ts" time="10.137">
+</testcase>
+</testsuite>
+<testsuite name="work-item.spec.ts" timestamp="2026-07-14T00:01:20.816Z" hostname="chromium" tests="5" failures="0" skipped="0" time="123.532" errors="0">
+<testcase name="Work Items › UI-004: Open existing work item and verify detail drawer" classname="work-item.spec.ts" time="12.5">
+</testcase>
+<testcase name="Work Items › UI-005: Open New Work Item form and verify empty-title behavior" classname="work-item.spec.ts" time="10.953">
+<system-out>
+<![CDATA[Save button disabled with empty title: false
+]]>
+</system-out>
+</testcase>
+<testcase name="Work Items › UI-006: Create unique work item and verify it appears in list" classname="work-item.spec.ts" time="12.288">
+</testcase>
+<testcase name="Work Items › UI-007: Modify created work item and verify persistence" classname="work-item.spec.ts" time="63.175">
+<system-out>
+<![CDATA[Changed state for AUTO-D3-UI-2026-07-14T00-02-54
+Global cleanup: API_CLEANED_2_of_2
+
+[[ATTACHMENT|reports/test-results/work-item-Work-Items-UI-00-58c41-item-and-verify-persistence-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|reports/test-results/work-item-Work-Items-UI-00-58c41-item-and-verify-persistence-chromium/video.webm]]
+
+[[ATTACHMENT|reports/test-results/work-item-Work-Items-UI-00-58c41-item-and-verify-persistence-chromium/error-context.md]]
+
+[[ATTACHMENT|reports/test-results/work-item-Work-Items-UI-00-58c41-item-and-verify-persistence-chromium/error-context.md]]
+
+[[ATTACHMENT|reports/test-results/work-item-Work-Items-UI-00-58c41-item-and-verify-persistence-chromium/trace.zip]]
+Changed state for AUTO-D3-UI-2026-07-14T00-03-31
+]]>
+</system-out>
+</testcase>
+<testcase name="Work Items › UI-008: Delete created work item and verify removal from list" classname="work-item.spec.ts" time="24.616">
+<system-out>
+<![CDATA[Falling back to API cleanup for "AUTO-D3-UI-2026-07-14T00-03-58"
+API cleanup: API_CLEANED_1_of_1
+Global cleanup: API_CLEANED_1_of_1
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="workspace.spec.ts" timestamp="2026-07-14T00:01:20.816Z" hostname="chromium" tests="1" failures="0" skipped="0" time="8.298" errors="0">
+<testcase name="Workspace (authenticated) › UI-002b: Workspace loads QA Lab heading and Plane QA Project from storage state" classname="workspace.spec.ts" time="8.298">
+</testcase>
+</testsuite>
+</testsuites>
+[8mha:////4NxicRrB1cYKLODxwaCDSvHgjIrnhDYgDRQ47TmrStEPAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiISQKRJXWcsMLTGyME+vO2A5JxYv4Gn8gEImKLVY728zzBcsU4cjRYmuoc5Qah8H3dlo4cOwungds+YwNU2JvUJpBsjb1jJKzgTlFCQsBK0ON5+TIZliLVt1V5RXZ6pTj9B0ElE7f4AGFmMxZxfyFMcLm2uvE9PP8FcAYQoZyv/vU9g0/Fv9WvgAAAA==[0m[Pipeline] }
+[8mha:////4EV9+/hBYC1Zm2xA8/VaoBH0voIGQcrlqjESzSs7vO19AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiCkSBqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFDud5/avgEglKoEvgAAAA==[0m[Pipeline] // withCredentials
+[8mha:////4KD/QQ8/qT2SeO7CDi2BF7xxwvS/bZLnFmHm9xIoyYOEAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJCBQWiSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwhQ7nffWr7BhjWOfW+AAAA[0m[Pipeline] }
+[8mha:////4NzPBR/RgerFxlTOvVt39G1ki4h+IbclfaSiV876JSKPAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMLpiBCiSmul4QUmPowT687YDknFi/gaf8AiEhVbrHa2mdcb1jHAiYMRPdJgKXZWeDeavMTEYbg6nkTPF9ExRXYoWpxa1tgs2HJCWFKUsJKwQeocR0smwVb26qEqp8hU5xTyd5RQWn2HJxQym5MK6QtzgN1t1JHp5/krgNn7BGVd59ofPliMol6+AAAA[0m[Pipeline] // stage
+[8mha:////4OO811Mr2gXFZiIZ4fUh2FGD6sffuFiH43MF2O9PLD1RAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYTTARKiorXc8AITG+PEugv2haTiRXyNPxCIRMVWOyut5vmCMic4UPKycdgGzHWQXez91ORAqb1EGmRDZ1kTZopOajdosu44oyZ2MEcUsFCwdFhHygE9w0o15m6qaNBXJ07TtldQBHuDBwg1mdkk/sKYYH3tbSb8ef4KYOwYxIah2O4+x/INIOrFhsEAAAA=[0m[Pipeline] stage
+[8mha:////4BzgrA0bZtIWQIV6AvKLlJwTzAcltCbmfNlkbWSW5ZjqAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0BISYukZZOEFoQkgb/V9+UtqJE3E17kBLJSY8WLYl673eUESGE7ETjcXWY6y96ELvpiQG4vYaaBANXURNGClYoeygyNhqqYqShUVZDisJa4t1oOjRJdjIRj90GTS68px42o4Scm/u8IRMTuSkOX3LyLC99SYS/jh/ATB2CfLdfrbD/Cw+81LNBsIAAAA=[0m[Pipeline] { (12. Cleanup Verification)
+[8mha:////4BRjawedsivESBhZWs352fzlwv9d4UTJ6v6GHa8zy6dmAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJCBwilorXc8AKTGOPEugu2g1PxIr7GH7CIRMUWq51t5vWGZfBQszfYaeothcbi4EaTFyb2/dVxwo4v2DAFdhqlTpJbfZpRctQwpyhhIWClqXEcLJkIa9Gph6qcIlOdo8/fUUBp2zs8oRDZHJWPX5g8bG5jG5h+nr8CmIYI5e6Qa78dPkgcDP2+AAAA[0m[Pipeline] sh
++ echo === Cleanup Check ===
+=== Cleanup Check ===
++ /home/jenkins/agent/workspace/plane-qa-pipeline/.venv-ci/bin/python -c 
+import requests, os, sys, time
+from dotenv import load_dotenv
+load_dotenv()
+base = os.getenv('PLANE_BASE_URL')
+ws = os.getenv('PLANE_WORKSPACE_SLUG')
+pid = os.getenv('PLANE_PROJECT_ID')
+api_key = os.getenv('PLANE_API_KEY')
+hdrs = {'X-API-Key': api_key}
+url = f'{base}/api/v1/workspaces/{ws}/projects/{pid}/issues/'
+
+def _retry_request(method, req_url, max_retries=5):
+    backoffs = [2, 4, 8, 16, 32]
+    for attempt in range(max_retries + 1):
+        resp = requests.request(method, req_url, headers=hdrs, timeout=15)
+        if resp.status_code != 429:
+            return resp
+        if attempt >= max_retries:
+            return resp
+        retry_after = resp.headers.get('Retry-After')
+        if retry_after is not None:
+            try:
+                wait = int(retry_after)
+            except (ValueError, TypeError):
+                wait = backoffs[attempt]
+        else:
+            wait = backoffs[attempt]
+        print(f'429 retry: attempt={attempt+1}, status=429, wait={wait}s')
+        time.sleep(wait)
+    return resp
+
+resp = _retry_request('GET', url)
+data = resp.json()
+issues = data.get('results', data) if isinstance(data, dict) else data
+auto = [i for i in (issues if isinstance(issues, list) else []) if 'AUTO-D' in str(i.get('name',''))]
+print(f'Total issues: {len(issues) if isinstance(issues, list) else N/A}')
+print(f'AUTO-D residue: {len(auto)}')
+for i in auto:
+    print(f'  LEFTOVER: {i[name]}')
+    del_url = f'{url}{i[id]}/'
+    dr = _retry_request('DELETE', del_url)
+    print(f'  Delete attempt: {dr.status_code}')
+# Re-fetch to confirm cleanup
+time.sleep(1)
+resp2 = _retry_request('GET', url)
+data2 = resp2.json()
+issues2 = data2.get('results', data2) if isinstance(data2, dict) else data2
+auto2 = [i for i in (issues2 if isinstance(issues2, list) else []) if 'AUTO-D' in str(i.get('name',''))]
+assert len(auto2) == 0, f'Leftover AUTO-D items: {len(auto2)}'
+print('Cleanup: PASS')
+
+Total issues: 1
+AUTO-D residue: 0
+Cleanup: PASS
+[8mha:////4IntSM9cKCI9TTkOgQmJfjf+dI6l2g/Q0NB3mXl+Ud8vAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiKkAoFa3lhheYxBgn1l2wHZyKF/E1/oBFJCq2WO1sM683LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDQMEcr9Ntfu8AHtLqhnvgAAAA==[0m[Pipeline] }
+[8mha:////4HoE7M6frWqXghLyrzeu5N5feU04oDJblhx/mdJEWZAhAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIi0RAJUaW10vACExvjxLoztkNS8SK+xh+wiETFFqudbeb1hnUMcOJgsNc0WIqdRe9GkxdOHIar4wl7vmDHFNlpbPXUstLNgi0nDUuKElYCNpo6x9GSSbAVvXzIykky1TmF/B0FlFbd4QmFyOYkQ/rCHGB3G1Vk+nn+CmD2PkFZ73Md6g/VbDuWvgAAAA==[0m[Pipeline] // stage
+[8mha:////4O8dtt3jR3FHxfdIOvCb5085QYgoOK2dEqfb2O4m7kt1AAAApx+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYRTICEkREVrueEFJjbGiXUX7AtJxYv4Gn8gEImKrXZWWs3zBWVOcKDkZeOwDZjrILvY+6nJgVJ7iTTIhs6yJswUndRu0GTdcUZN7GCOKGChYOmwjpQDeoaVaszdVNGgr06cpm2voAj2Bg8QajKzSfyFMcH62ttM+PP8FcDYMYgtQ7HbfI7lGwpqShrBAAAA[0m[Pipeline] stage
+[8mha:////4OeEXdxZ2te9EVjgozWHIhz9KMaEDzpyzJfBqx3wFjhkAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0gAEJMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLkh91s+/lZfADxKa4dwgAAAA==[0m[Pipeline] { (Declarative: Post Actions)
+[8mha:////4DduqYjO16JOw9VcK41R3DyTaoA3LjWK/eubryS3O2hqAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0AQkJMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLkh91s+/lZfADX78n/wgAAAA==[0m[Pipeline] script
+[8mha:////4ODzu/DwoyOa3C1RR479CSQOYxF8ry0Lf/t4kSIK4802AAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0AiEhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYL8sJttPz+LD7lC07jCAAAA[0m[Pipeline] {
+[8mha:////4KC9FFXHrS93wAluTLlnrdxNoxIrtPQO0WAIk5n8ZwulAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSARKiSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyv32U7vwBsroJZ2+AAAA[0m[Pipeline] sh
++ echo === POST: Publish Reports ===
+=== POST: Publish Reports ===
++ mkdir -p archive/reports archive/evidence
++ cp -r reports/api-regression.html reports/api-validation.html reports/db-full.html archive/reports/
++ cp -r reports/junit-api-regression.xml reports/junit-api-validation.xml reports/junit-db.xml archive/reports/
++ cp -r evidence archive/
++ cp -r playwright-report archive/reports/
++ echo Reports staged for archival
+Reports staged for archival
+[8mha:////4KgiXJUZykx8VcJUVfhPoc/+RJoUXMJOvpJ+dMxiZ3MtAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSoUiIitZKwwtMYowd686xHZyKF/E1/kAgEhVbrHa2mecL1jHAkYNGq6g3FFuD3o16Xpg59FfHGS1fsGWK7BQ2KjfcqdOCDScFS4oSVgI2ilrH0ZBOsBVW3mXlJOnqnML8HQSUphvgAYWYzUmG9IUpwO42dpHp5/krgMn7BGVdf2r/Bnt+gFe+AAAA[0m[Pipeline] }
+[8mha:////4JpUgpyqL708Yfd2fHLV3kRAqWy/ti2SEsi+qMNE34yyAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSIYEQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGMIGcrd/lPbN2T81QW+AAAA[0m[Pipeline] // script
+[8mha:////4PXUwj13gXPXsd5Qp9h5POJYd1DFbBygdtkzxBslAv4lAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJCQQFCqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKYhQrnf5Tpshw8TBTlEvgAAAA==[0m[Pipeline] junit
+Recording test results
+[Checks API] No suitable checks publisher found.
+[8mha:////4MpmVlNGJ2J2wivE5i0zh93jsvbL8AYvqKhdRBoAbGnyAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiJAoQSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANEcr9LtdhO3wAUjQiXb4AAAA=[0m[Pipeline] archiveArtifacts
+Archiving artifacts
+Recording fingerprints
+[8mha:////4Nw62ku0atGzHWK8vWP6jApBILcL8wPQG717I0+RLDITAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUQgwg1Ik16sIJQhNC0uj/kqSkEyfiatyBQCUmPFi2Jes9X1AFDw15zazC3mDoDBvcqHNiiXx/cZSYpTPrCAM5xVqVWpLqONeWooJZRQkLDkuFnaNgUEdYcSvuonYCdX2KPm8HDqWRN3hAwTM5Ch+/ZfKwvo4yEP44fwEwDRHK3TbbfvN5Vm/b1LtEwgAAAA==[0m[Pipeline] script
+[8mha:////4FVRdcJFgK19wMmulgFzC/8XHauTpABt26fnBsKgi1oaAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUggkhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYL8sJttPz+LD1KB9/zCAAAA[0m[Pipeline] {
+[8mha:////4NlvR0Fit3LpXyoxVMXUL604SfNFpjnceA2wFtD9Y9CjAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSQIMQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUO63n9qFNwf+WCm+AAAA[0m[Pipeline] sh
++ echo === POST: Cleanup ===
+=== POST: Cleanup ===
++ rm -f /home/jenkins/agent/workspace/plane-qa-pipeline/.env
++ rm -f /home/jenkins/agent/workspace/plane-qa-pipeline/.playwright/auth-state.json
++ rm -rf /home/jenkins/agent/workspace/plane-qa-pipeline/.venv-ci
++ echo Post-cleanup complete
+Post-cleanup complete
+[8mha:////4EvjMqOqwr/mM8GBhuIRgHoVWHg2g+/gomLFqYC8Zh7jAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSIAqEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFDud5/avgHfoxgkvgAAAA==[0m[Pipeline] }
+[8mha:////4NpvtLf5DRTlMBbrm9DgoCHy1itbUKQjxR3di5agK59eAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiUSAhRJXWcsMLTGyME+vO2A5JxYv4Gn8gEImKLVY728zzBcsU4cjRYmuoc5Qah8H3dlo4cOwungds+YwNU2JvUJpBsjb1jJKzgTlFCQsBK0ON5+TIZliLVt1V5RXZ6pTj9B0ElE7f4AGFmMxZxfyFMcLm2uvE9PP8FcAYQoZyv/vU9g3n4YvVvgAAAA==[0m[Pipeline] // script
+[8mha:////4OzYR401xzH4606GBAOuYaYxnxTbsVHzG9mi1L/NSOSKAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSIAFCqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKYhQrnf5jrshg/Uk3gLvgAAAA==[0m[Pipeline] echo
+Pipeline PASSED - all tests green, zero residue.
+[8mha:////4I47VF4SP4gW6/YVjGddjNwQNgv5SPu4an3f9ciBvI9UAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMJpKIIQVVorDS8w8WGcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThyM6JEGS7GzwrvR5CUmDsPV8SR6voiOKbJD0eLUssZmwZYTwpKihJWEDVLnOFoyCbayVw9VOUWmOqeQv6OE0uo7PKGQ2ZxUSF+YA+xuo45MP89fAczeJygPda56/wHjFPkfvgAAAA==[0m[Pipeline] }
+[8mha:////4FrQ2o0IEmAFNSSAoNAkA9+2khtYAxekulY3gYVcBueVAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJS0BAhqrRWGl5gYmOcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThwM9poGS7Gz6N1o8sKJw3B1PGHPF+yYIjuNrZ5aVrpZsOWkYUlRwkrARlPnOFoyCbailw9ZOUmmOqeQv6OA0qo7PKEQ2ZxkSF+YA+xuo4pMP89fAczeJyjrOtdh/wHlUsFKvgAAAA==[0m[Pipeline] // stage
+[8mha:////4A4kwzD0barKFbJ0JnCA81Lf24qczT7jloFMr8lDaC7OAAAApB+LCAAAAAAAAP9tjTESgjAQRTcwFraWHiJgY+NY2WZoPEEkMQYyu5gshsoTeTXvICMzVv7qv9e81xtWKcKRopOdxd5jar0cwujmJzPF/hooy44usiVMFKxsbG7I2NOCDbGFZaKAUsHaYhsoeXQMG9Xph66CRledOc7uoKDw5g5PEGous478hSnC9jaaRPjr/A3ANAwM5a6uGcT+A80pz6a+AAAA[0m[Pipeline] }
+[8mha:////4Fh5YnIIpoI/gt3MQIrFV3u+GeZ/HhKr3HourbeCxpbiAAAApB+LCAAAAAAAAP9tjTESgjAQRRcYC1tLDxGksHKsbDM0niCSGAOZ3ZgshsoTeTXvICMzVv7qv9e81xtWKcKRohW9wcFh6pwIfrTzE5nicPWURU8X0REm8ka0JrekzWnBltjAsqKESsLaYOcpObQMG9mrh6q9QlufOc7uIKF0+g5PKORcZhX5C1OE7W3UifDX+RuAKQSGqtk1DMX+A8dRpgK+AAAA[0m[Pipeline] // withEnv
+[8mha:////4GqNkiWnynbQ4VL+CyRHLlDkWfB+RAfFCYnrczl9Z8b9AAAApB+LCAAAAAAAAP9tjTEOwjAQBM+JKGgpeYQDiA5R0VppeIFxjHFi3QX7glPxIr7GH4iIRMVWO9PM6w2LFOFI0cnWYucxGS/7MLjpyUyxuwbKsqWLNISJgpW1zTU19jRjTWxhniigVLC0aAIlj45hpVr90FXQ6Kozx8kdFBS+ucMThJrKrCN/YYywvg1NIvx1/gZg7HuGcrvZMYj9B4EbATK+AAAA[0m[Pipeline] }
+[8mha:////4OC5myp0JJKv7f1dO1UnkYZdi8ug02w+UiRnPOdKWbNRAAAApB+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYQDSomoaK00vMDExjix7ox9wal4EV/jD0REomKrnWnm9YZVinCkaEVvcHCYOieCH+38RKY4XD1l0dNFdISJvBGtyS1pc1qwJTawrCihkrA22HlKDi3DRvbqoWqv0NZnjrM7SCidvsMTCjmXWUX+whRhext1Ivx1/gZgCoGh2u8ahqL5AJKnBZG+AAAA[0m[Pipeline] // node
+[8mha:////4C/r0Q73d/3m/3SVz1n1A4/vpTjrQ0gJoUJrgh6mlSimAAAApB+LCAAAAAAAAP9tjTEOwjAQBM+JKGgpeYQDiA5R0VppeIFxjHFi3QX7glPxIr7GH4iIRMVWO9PM6w2LFOFI0cnWYucxGS/7MLjpyUyxuwbKsqWLNISJgpW1zTU19jRjTWxhniigVLC0aAIlj45hpVr90FXQ6Kozx8kdFBS+ucMThJrKrCN/YYywvg1NIvx1/gZg7HuGcrvZM4jdBxRLIlS+AAAA[0m[Pipeline] End of Pipeline
+Finished: SUCCESS

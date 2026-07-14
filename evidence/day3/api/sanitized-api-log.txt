@@ -1,0 +1,116 @@
+================================================================================
+Day 3 API - Sanitized API Log
+================================================================================
+
+Date: 2026-07-13
+Trace ID: qa-linux-20260713-021500-001
+
+All API Key values have been redacted. UUIDs retained (non-sensitive).
+User email retained only for format validation.
+
+--- Test Run: test_valid_api_key_returns_200 ---
+GET /api/v1/users/me/
+  Headers: {"X-API-Key": "[REDACTED]", "Accept": "application/json"}
+  Status: 200
+  Response fields: id, first_name, last_name, email, avatar, avatar_url, display_name
+
+--- Test Run: test_valid_api_key_user_has_expected_fields ---
+GET /api/v1/users/me/
+  Status: 200
+  Verified fields: id, email, first_name, last_name, display_name
+
+--- Test Run: test_no_api_key_header_returns_auth_error ---
+GET /api/v1/users/me/
+  Headers: {"Accept": "application/json"}  (no X-API-Key)
+  Status: 401
+
+--- Test Run: test_invalid_api_key_returns_403 ---
+GET /api/v1/users/me/
+  Headers: {"X-API-Key": "[REDACTED]", "Accept": "application/json"}
+  Status: 403
+  Body: {"detail": "Given API token is not valid"}
+
+--- Test Run: test_empty_api_key_returns_403 ---
+GET /api/v1/users/me/
+  Headers: {"X-API-Key": "", "Accept": "application/json"}
+  Status: 401
+
+--- Test Run: test_get_current_user_returns_200 ---
+GET /api/v1/users/me/
+  Status: 200
+  Verified: id is non-empty string
+
+--- Test Run: test_list_projects_returns_200 ---
+GET /api/v1/workspaces/qa-lab/projects/
+  Status: 200
+  Response type: dict (cursor-paginated)
+
+--- Test Run: test_project_list_contains_target_project ---
+GET /api/v1/workspaces/qa-lab/projects/
+  Status: 200
+  Verified: 0c1cf73f-2d88-430b-812b-2e1c7f010c3c in list
+
+--- Test Run: test_get_project_detail_returns_200 ---
+GET /api/v1/workspaces/qa-lab/projects/0c1cf73f-2d88-430b-812b-2e1c7f010c3c/
+  Status: 200
+  Verified: id matches
+
+--- Test Run: test_nonexistent_project_returns_404 ---
+GET /api/v1/workspaces/qa-lab/projects/00000000-0000-0000-0000-000000000000/
+  Status: 404
+
+--- Test Run: test_list_issues_returns_200 ---
+GET /api/v1/workspaces/qa-lab/projects/0c1cf73f-2d88-430b-812b-2e1c7f010c3c/issues/
+  Status: 200
+
+--- Test Run: test_get_first_issue_detail ---
+GET /api/v1/workspaces/qa-lab/projects/0c1cf73f-2d88-430b-812b-2e1c7f010c3c/issues/{id}/
+  Status: 200
+  Verified: id, name, sequence_id, state, priority, created_at
+
+--- Test Run: test_nonexistent_issue_returns_404 ---
+GET /api/v1/workspaces/qa-lab/projects/0c1cf73f-2d88-430b-812b-2e1c7f010c3c/issues/00000000-0000-0000-0000-000000000000/
+  Status: 404
+
+--- Test Run: test_list_states_returns_200 ---
+GET /api/v1/workspaces/qa-lab/projects/0c1cf73f-2d88-430b-812b-2e1c7f010c3c/states/
+  Status: 200
+  Count: >0
+
+--- Test Run: test_list_labels_returns_200 ---
+GET /api/v1/workspaces/qa-lab/projects/0c1cf73f-2d88-430b-812b-2e1c7f010c3c/labels/
+  Status: 200
+
+--- Test Run: test_list_members_returns_200 ---
+GET /api/v1/workspaces/qa-lab/projects/0c1cf73f-2d88-430b-812b-2e1c7f010c3c/members/
+  Status: 200
+  Count: >0
+
+--- Test Run: test_list_cycles_returns_200 ---
+GET /api/v1/workspaces/qa-lab/projects/0c1cf73f-2d88-430b-812b-2e1c7f010c3c/cycles/
+  Status: 200
+
+--- Test Run: test_list_modules_returns_200 ---
+GET /api/v1/workspaces/qa-lab/projects/0c1cf73f-2d88-430b-812b-2e1c7f010c3c/modules/
+  Status: 200
+
+--- Test Run: test_work_item_full_lifecycle ---
+POST /api/v1/workspaces/qa-lab/projects/0c1cf73f-2d88-430b-812b-2e1c7f010c3c/issues/
+  Body: {"name": "AUTO-D3-{timestamp}-API-TEST", "description_html": "...", "priority": "low"}
+  Status: 201
+
+PATCH /api/v1/workspaces/qa-lab/projects/0c1cf73f-2d88-430b-812b-2e1c7f010c3c/issues/{id}/
+  Body: {"description_html": "Updated by automated test.", "priority": "urgent"}
+  Status: 200
+
+DELETE /api/v1/workspaces/qa-lab/projects/0c1cf73f-2d88-430b-812b-2e1c7f010c3c/issues/{id}/
+  Status: 204
+
+GET (verify delete) same path
+  Status: 404
+
+Cleanup fixture: no leftover resource
+
+================================================================================
+END OF LOG
+================================================================================

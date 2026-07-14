@@ -1,0 +1,34 @@
+Plane v1.3.1 400 Error Response Structure
+===========================================
+Date: 2026-07-13
+
+Confirmed 400 Scenarios:
+
+1. POST /api/v1/.../issues/ with {} body
+   → 400 Bad Request
+   → Response includes error detail
+   → No work item created
+
+2. POST with {"name": ""} (empty string)
+   → 400 Bad Request
+   → Name field validation active
+
+3. POST with {"name": 12345} (wrong type)
+   → 400 Bad Request
+   → Type coercion rejected
+
+4. POST with invalid priority enum
+   → 400 Bad Request
+   → Enum validation active on priority
+
+5. POST with malformed JSON
+   → 400 Bad Request
+   → JSON parse error handled
+
+6. POST with 10000-char title
+   → 400 Bad Request
+   → Length validation active (varchar limit)
+
+Note: Plane v1.3.1 error responses vary in structure.
+Some return JSON error objects, others return plain text or HTML.
+This is documented as-is — not classified as a defect.

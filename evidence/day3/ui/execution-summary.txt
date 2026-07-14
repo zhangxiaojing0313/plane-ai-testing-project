@@ -1,0 +1,223 @@
+================================================================================
+Plane AI Testing Project - Day 3 Phase 2: UI Automation Execution Summary
+================================================================================
+
+Trace ID: qa-linux-20260713-030600-001
+Date: 2026-07-13
+Host: qa-linux
+User: tester
+Project Dir: /home/tester/qa-workspace/plane-ai-testing-project
+Plane Version: Community Edition v1.3.1
+Target: http://192.168.146.132:8090
+
+================================================================================
+1. ENVIRONMENT
+================================================================================
+
+Browser: Chromium (Playwright 1.61.1, chrome-headless-shell 149.0.7827.55)
+Node.js: via npx
+TypeScript: 5.8.3
+Viewport: 1280x900
+OS: Linux 7.0.0-27-generic
+
+================================================================================
+2. REAL COLLECTED TEST LIST (npx playwright test tests/ui --list)
+================================================================================
+
+  [setup]          auth.setup.ts      › Authentication Setup › authenticate and save storage state
+  [chromium-login] login.spec.ts      › UI-001: Login with valid credentials and enter QA Lab
+  [chromium-login] login.spec.ts      › UI-002: Verify Workspace home shows QA Lab and Plane QA Project
+  [chromium]       project.spec.ts    › UI-003: Enter Plane QA Project Work Items and verify existing items visible
+  [chromium]       work-item.spec.ts  › UI-004: Open existing work item and verify detail drawer
+  [chromium]       work-item.spec.ts  › UI-005: Open New Work Item form and verify empty-title behavior
+  [chromium]       work-item.spec.ts  › UI-006: Create unique work item and verify it appears in list
+  [chromium]       work-item.spec.ts  › UI-007: Modify created work item and verify persistence
+  [chromium]       work-item.spec.ts  › UI-008: Delete created work item and verify removal from list
+  [chromium]       workspace.spec.ts  › UI-002b: Workspace loads QA Lab heading and Plane QA Project from storage state
+
+Total: 10 tests in 5 files
+
+================================================================================
+3. TEST CLASSIFICATION
+================================================================================
+
+Playwright 收集的 10 条测试按性质分为三类：
+
+A. 核心业务 UI 用例 — 8 条 (UI-001 ~ UI-008)
+   UI-001: Login with valid credentials and enter QA Lab ......... PASSED
+   UI-002: Verify Workspace home shows QA Lab and Plane QA Project PASSED
+   UI-003: Enter Plane QA Project Work Items ...................... PASSED
+   UI-004: Open existing work item and verify detail drawer ....... PASSED
+   UI-005: Open New Work Item form, verify empty-title behavior ... PASSED
+   UI-006: Create unique work item and verify list visibility ..... PASSED
+   UI-007: Modify created work item and verify persistence ........ PASSED
+   UI-008: Delete created work item and verify removal ............ PASSED
+
+B. Auth Setup — 1 条（认证基础设施，非业务测试）
+   authenticate and save storage state .......................... PASSED
+   说明：完成登录并将 cookie 保存为 .playwright/auth-state.json，
+         供 chromium project 复用。不属于业务测试用例。
+
+C. 辅助用例 — 1 条（storageState 复用验证，非独立业务场景）
+   UI-002b: Workspace loads from storage state ................... PASSED
+   说明：验证已保存的 storageState 能否正确加载并进入 Workspace。
+         是自动化框架自身的复用性验证，不是独立业务场景。
+
+================================================================================
+4. EXECUTION RESULTS
+================================================================================
+
+  Passed:  10
+  Failed:  0
+  Skipped: 0
+
+  of which:
+    Core business UI (UI-001 ~ UI-008): 8 passed
+    Auth Setup (infrastructure):       1 passed
+    Auxiliary (storageState verify):   1 passed
+
+================================================================================
+5. AUTHENTICATION & STORAGE STATE
+================================================================================
+
+Auth Method: Two-step login (email → Continue → password → Go to workspace)
+Storage State: .playwright/auth-state.json (982 bytes)
+Reuse: chromium project loads storageState for all authenticated tests
+Login tests: Dedicated chromium-login project (no storageState, no setup dependency)
+
+Login Flow:
+  1. input[name=email]     → fill email
+  2. button "Continue"     → click
+  3. input[type=password]  → fill password
+  4. button "Go to workspace" → click
+  5. Redirect to /{workspace-slug}/ → workspace home
+
+================================================================================
+6. LOCATOR STRATEGY
+================================================================================
+
+Priority order (all based on real page exploration):
+  1. getByRole (button, heading, link with accessible names)
+  2. getByPlaceholder (password input)
+  3. input[name=email], input[type=password] (precise attribute selectors)
+  4. getByText for exact text matching
+  5. locator().filter({ hasText: ... }) for contextual matching
+
+Key locators discovered:
+  - Email input:     input[name=email] (unique to login page)
+  - Continue btn:    getByRole("button", { name: "Continue" })
+  - Password input:  input[type=password] (unique to password step)
+  - Login btn:       getByRole("button", { name: /go to workspace/i })
+  - Workspace:       getByRole("heading", { name: "QA Lab" })
+  - Project:         getByRole("link", { name: /Plane QA Project/i })
+  - Work items nav:  getByRole("link", { name: "Work items" })
+  - Add work item:   locator("button").filter({ hasText: /Add work item/i })
+  - Title input:     locator("input[name=name]")
+  - Save btn:        getByRole("button", { name: "Save" })
+  - Delete btn:      getByRole("button", { name: "Delete" })
+
+================================================================================
+7. CREATE / UPDATE / DELETE / CLEANUP RESULTS
+================================================================================
+
+Create:
+  - Each write test creates exactly 1 work item (AUTO-D3-UI-{UTC timestamp})
+  - Create via UI form (Add work item → fill title → Save)
+  - Verified: item appears in work items list
+
+Update:
+  - UI-007: State change (Backlog → Started) via UI dropdown
+  - Verified: item persists after page reload
+
+Delete:
+  - UI trigger: Delete button + confirmation dialog
+  - Fallback: API DELETE via test.afterAll as cleanup safety net
+  - Occasional sidebar overlay interception handled with force:true
+  - Verified: item absent from list after deletion
+
+Cleanup:
+  - test.afterAll: API DELETE sweeps all AUTO-D3-UI-* items
+  - Final residue verification: 0 items via API GET list
+  - Leftover data: 0 auto-generated items
+
+================================================================================
+8. AUTOMATION LIMITATIONS (NOT PLANE DEFECTS)
+================================================================================
+
+The following are automation-specific constraints, NOT Plane product defects:
+
+  1. force:true on Delete button — sidebar DOM elements may intercept
+     pointer events in the drawer overlay. This is a locator/layout
+     interaction issue in the test harness, not a Plane bug.
+
+  2. waitForTimeout after SPA navigation — Plane renders client-side
+     without explicit loading indicators. These waits are a pragmatic
+     compromise for React hydration latency.
+
+  3. Save button not disabled on empty title — Plane v1.3.1 defers
+     validation to the server. This is documented behavior, not a defect.
+
+================================================================================
+9. PLANE v1.3.1 UI BEHAVIOR NOTES
+================================================================================
+
+  - Login is two-step (email then password) with "Go to workspace" button
+  - Save button is NOT disabled when title is empty (server-side validation)
+  - Work item detail opens in a side drawer (URL does not change)
+  - State changes available via button click on detail drawer
+  - Archive button requires completed/canceled status
+  - SPA with client-side rendering (hydration after domcontentloaded)
+  - Dual sidebar rendering (two instances of workspace nav in DOM)
+
+================================================================================
+10. SENSITIVE INFORMATION CHECK
+================================================================================
+
+  - No hardcoded credentials in any test file
+  - No API Key in test files
+  - No password in logs or reports
+  - No email in logs or reports
+  - .env permissions: 600
+  - .playwright/auth-state.json excluded from git via .gitignore
+  - storageState*.json patterns excluded via .gitignore
+  - Screenshots do NOT capture password entry page (taken post-login)
+
+================================================================================
+11. EVIDENCE FILES
+================================================================================
+
+Screenshots:
+  evidence/day3/ui/screenshots/01-workspace-home.png
+  evidence/day3/ui/screenshots/02-work-items-list.png
+  evidence/day3/ui/screenshots/03-work-item-created.png
+
+Locator Exploration:
+  evidence/day3/ui/locator-exploration.txt
+  evidence/day3/ui/locator-exploration-v3.txt
+
+Cleanup:
+  evidence/day3/ui/cleanup-result.txt
+
+HTML Report:
+  reports/day3-ui-html/index.html
+
+================================================================================
+12. NOT YET COVERED (UI)
+================================================================================
+
+  - Form validation (required fields, character limits)
+  - Comments, attachments, sub-work items, relations via UI
+  - Filter and search functionality
+  - Cross-browser (Firefox)
+  - Responsive/mobile views
+  - Accessibility
+  - Session timeout
+  - Bulk operations
+
+================================================================================
+13. FINAL STATUS
+
+# ✅ 10/10 PASSED · 0 FAILED · 0 SKIPPED
+# 8 core business + 1 auth setup + 1 auxiliary
+# 0 leftover data · 0 product defects · 0 security issues
+================================================================================

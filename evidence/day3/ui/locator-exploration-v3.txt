@@ -1,0 +1,133 @@
+=== LOGIN ===
+Logged in: http://192.168.146.132:8090/
+
+=== ISSUES PAGE ===
+URL: http://192.168.146.132:8090/qa-lab/projects/0c1cf73f-2d88-430b-812b-2e1c7f010c3c/issues
+
+--- Looking for Add Work Item button ---
+  BTN: "Open in new tab" visible=true
+  BTN: "Open in new tab" visible=true
+  BTN: "New work item" visible=true
+  BTN: "New work item" visible=true
+  BTN: "Work itemAdd work item" visible=true
+
+Add work item button count: 1
+After clicking Add work item: http://192.168.146.132:8090/qa-lab/projects/0c1cf73f-2d88-430b-812b-2e1c7f010c3c/issues
+
+--- Looking for form/modal ---
+Dialog/modal/drawer count: 13
+
+--- All input fields ---
+  FIELD: type="text" placeholder="Search commands..." name="" role="" visible=true
+  FIELD: type="" placeholder="Search" name="" role="" visible=false
+  FIELD: type="text" placeholder="Title" name="name" role="" visible=true
+  FIELD: type="" placeholder="" name="" role="" visible=true
+
+--- All buttons ---
+  BTN: text="Edit" aria=""
+  BTN: text="Make a copy" aria=""
+  BTN: text="Open in new tab" aria=""
+  BTN: text="Copy link" aria=""
+  BTN: text="ArchiveOnly completed or canceled
+work items can be archived" aria=""
+  BTN: text="Delete" aria=""
+  BTN: text="Edit" aria=""
+  BTN: text="Make a copy" aria=""
+  BTN: text="Open in new tab" aria=""
+  BTN: text="Copy link" aria=""
+  BTN: text="ArchiveOnly completed or canceled
+work items can be archived" aria=""
+  BTN: text="Delete" aria=""
+  BTN: text="QQA Lab" aria="Open workspace switcher"
+  BTN: text="A" aria=""
+  BTN: text="A" aria=""
+  BTN: text="New work item" aria=""
+  BTN: text="Workspace" aria="aria_labels.app_sidebar.close_workspace_menu"
+  BTN: text="" aria="aria_labels.app_sidebar.close_workspace_menu"
+  BTN: text="More" aria="aria_labels.app_sidebar.open_extended_sidebar"
+  BTN: text="Projects" aria="Close projects menu"
+  BTN: text="" aria="Close projects menu"
+  BTN: text="📌Plane QA Project" aria="Close project menu"
+  BTN: text="" aria="Toggle quick actions menu"
+  BTN: text="👇QA Lab" aria="Open project menu"
+  BTN: text="" aria="Toggle quick actions menu"
+  BTN: text="Community" aria="Open paid plans' modal"
+  BTN: text="New work item" aria=""
+  BTN: text="Workspace" aria="aria_labels.app_sidebar.close_workspace_menu"
+  BTN: text="" aria="aria_labels.app_sidebar.close_workspace_menu"
+  BTN: text="More" aria="aria_labels.app_sidebar.open_extended_sidebar"
+  BTN: text="Projects" aria="Close projects menu"
+  BTN: text="" aria="Close projects menu"
+  BTN: text="📌Plane QA Project" aria="Close project menu"
+  BTN: text="" aria="Toggle quick actions menu"
+  BTN: text="👇QA Lab" aria="Open project menu"
+  BTN: text="" aria="Toggle quick actions menu"
+  BTN: text="Community" aria="Open paid plans' modal"
+  BTN: text="...📌Plane QA Project" aria=""
+  BTN: text="...📌Plane QA Project" aria=""
+  BTN: text="Display" aria=""
+  BTN: text="Analytics" aria=""
+  BTN: text="Work itemAdd work item" aria=""
+  BTN: text="PLANEQAPRO-1" aria=""
+  BTN: text="Backlog" aria=""
+  BTN: text="Backlog" aria=""
+  BTN: text="📌Plane QA Project" aria=""
+  BTN: text="📌Plane QA Project" aria=""
+  BTN: text="Backlog" aria=""
+  BTN: text="Backlog" aria=""
+  BTN: text="None" aria=""
+  BTN: text="Assignees" aria=""
+  BTN: text="Assignees" aria=""
+  BTN: text="Labels" aria=""
+  BTN: text="Start date" aria=""
+  BTN: text="Start date" aria=""
+  BTN: text="Due date" aria=""
+  BTN: text="Due date" aria=""
+  BTN: text="Add parent" aria=""
+  BTN: text="Discard" aria=""
+  BTN: text="Save" aria=""
+
+=== TRY CREATING WORK ITEM ===
+Title input count: 2
+Save/Create button count: 3
+  Save btn: "Add parent" disabled=false
+  Save btn: "Create more" disabled=false
+  Save btn: "Save" disabled=false
+Cancel/Close button count: 3
+ERROR: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: /cancel|close|discard/i }).first()[22m
+[2m    - locator resolved to <button disabled type="button" class="flex w-full gap-2 rounded-sm px-1 py-1.5 text-left text-11 select-none text-placeholder items-start">…</button>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    58 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is not enabled[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: /cancel|close|discard/i }).first()[22m
+[2m    - locator resolved to <button disabled type="button" class="flex w-full gap-2 rounded-sm px-1 py-1.5 text-left text-11 select-none text-placeholder items-start">…</button>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    58 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is not enabled[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+
+    at <anonymous> (/home/tester/qa-workspace/plane-ai-testing-project/scripts/explore-locators-v3.ts:117:31)

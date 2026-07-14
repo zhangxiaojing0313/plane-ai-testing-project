@@ -1,0 +1,28 @@
+Jenkins Environment Assessment
+===============================
+Date: 2026-07-13
+Container: qa-jenkins (jenkins/jenkins:lts-jdk17)
+
+USER: jenkins
+JAVA: NOT FOUND on PATH (Jenkins runs but java CLI inaccessible)
+GIT: 2.47.3
+PYTHON3: NOT FOUND
+PIP3: NOT FOUND
+NODE: NOT FOUND
+NPM: NOT FOUND
+DOCKER CLI: NOT FOUND
+DOCKER SOCKET: NOT MOUNTED
+CURL TO PLANE: 200 OK (reachable)
+CURL TO GITHUB: 200 OK (reachable)
+WORKSPACE: /var/jenkins_home/workspace/ (writable)
+TMP: /tmp writable
+DISK: 38G free / 59G total
+
+ASSESSMENT:
+Jenkins controller is a minimal image without Python, Node, or Docker.
+Cannot execute tests, access databases, or run Playwright directly.
+
+RECOMMENDATION:
+Use independent QA Runner container (Option C).
+Jenkins serves as trigger/scheduler only.
+All test execution happens in dedicated qa-runner container.

@@ -1,0 +1,27 @@
+Plane v1.3.1 Database Consistency Check
+=========================================
+Date: 2026-07-13
+
+API-DB CONSISTENCY:
+  Issue name:       MATCH
+  Issue priority:   MATCH
+  Issue project_id: DB correct (API v1 does not return project_id directly)
+  Issue state_id:   FK valid
+  Issue workspace:  FK valid
+
+SOFT DELETE BEHAVIOR:
+  API DELETE → 204 No Content
+  DB: deleted_at set to deletion timestamp
+  DB: Record preserved (NOT physically removed)
+  API GET after delete: Returns 404 (filtered by deleted_at IS NULL)
+
+FIELD SYNC:
+  API PATCH name → DB name updated ✓
+  API PATCH priority → DB priority updated ✓
+  DB updated_at changes after modification ✓
+
+NO CROSS-CONTAMINATION:
+  Known work item NOT modified ✓
+  Project NOT modified ✓
+  Workspace NOT modified ✓
+  State NOT modified ✓

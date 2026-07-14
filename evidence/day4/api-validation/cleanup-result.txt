@@ -1,0 +1,12 @@
+Day 4 API Validation Cleanup
+=============================
+Date: 2026-07-13
+
+All validation tests that could potentially create data include cleanup.
+test_invalid_priority_value, test_invalid_state_id, test_name_as_number,
+test_excessive_title_length, and test_empty_name_field include conditional
+cleanup for unexpected 201 responses.
+
+test_missing_required_field_and_no_residue explicitly verifies no data created.
+
+Final residue: 0 AUTO-D4-VALIDATION items

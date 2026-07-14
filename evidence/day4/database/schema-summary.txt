@@ -1,0 +1,65 @@
+================================================================================
+Plane PostgreSQL Database — Schema Summary (Day 4 Discovery)
+================================================================================
+
+Container:      plane-app-plane-db-1
+Image:          postgres:15.7-alpine
+Version:        PostgreSQL 15.7 on x86_64-pc-linux-musl
+Database:       plane
+User:           plane
+Auth:           Container-internal PGPASSWORD (never printed/logged)
+
+================================================================================
+CORE TABLES
+================================================================================
+
+issues (Work Items)
+  PK: id (uuid)
+  FK: project_id → projects.id
+  FK: workspace_id → workspaces.id
+  FK: state_id → states.id
+  FK: parent_id → issues.id
+  FK: created_by_id, updated_by_id → users.id
+  Title: name (varchar, NOT NULL)
+  Priority: priority (varchar) [urgent, high, medium, low, none]
+  Description: description_json (jsonb), description_html (text)
+  Display #: sequence_id (integer)
+  Order: sort_order (float)
+  Timestamps: created_at, updated_at, completed_at, archived_at, deleted_at
+  Delete: SOFT (deleted_at timestamp) — record preserved
+  Flags: is_draft (boolean)
+
+projects
+  PK: id (uuid)
+  FK: workspace_id → workspaces.id
+  FK: default_state_id → states.id
+  Name: name (varchar), identifier (varchar, unique per ws)
+  Delete: SOFT (deleted_at, archived_at)
+
+workspaces
+  PK: id (uuid)
+  FK: owner_id → users.id
+  Name: name (varchar), slug (varchar, UNIQUE)
+  Delete: SOFT (deleted_at)
+
+states
+  PK: id (uuid)
+  FK: project_id → projects.id, workspace_id → workspaces.id
+  Name: name, color, slug, group (backlog|unstarted|started|completed|cancelled)
+  Sequence: sequence (float)
+  Default: default (boolean), is_triage (boolean)
+  Delete: SOFT (deleted_at)
+
+workspace_members / project_members
+  FK: member_id → users.id, workspace_id / project_id
+  Role: role (smallint), is_active (boolean)
+  Delete: SOFT (deleted_at)
+
+================================================================================
+DELETE MECHANISM: SOFT DELETE (deleted_at timestamp)
+================================================================================
+All core tables use soft delete via deleted_at column.
+API DELETE returns 204. Record preserved in DB with deleted_at set.
+API filters exclude records where deleted_at IS NOT NULL.
+Archived records use separate archived_at column.
+================================================================================

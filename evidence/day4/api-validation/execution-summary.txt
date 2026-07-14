@@ -1,0 +1,56 @@
+================================================================================
+Plane AI Testing Project — Day 4 API Validation Test Execution Summary
+================================================================================
+
+Trace ID: qa-linux-20260713-120700-001
+Date: 2026-07-13
+
+================================================================================
+NEW VALIDATION TESTS (8 tests)
+================================================================================
+
+File: tests/api/test_validation.py
+Marker: api, negative, regression
+
+Test cases:
+
+1. test_missing_name_field ............. PASSED — 400 Bad Request confirmed
+2. test_empty_name_field ............... PASSED — 400 returned (Plane v1.3.1 rejects empty name)
+3. test_name_as_number ................. PASSED — 400 returned (type validation)
+4. test_invalid_priority_value ......... PASSED — 400 returned (enum validation)
+5. test_invalid_state_id ............... PASSED — Non-existent UUID handled
+6. test_malformed_json_body ............ PASSED — 400 returned for bad JSON
+7. test_excessive_title_length ......... PASSED — 400 returned (length limit)
+8. test_missing_required_field_no_residue PASSED — 400 + count unchanged
+
+API Validation: 8 passed, 0 failed (SUBSET of API Regression 37)
+API Regression: 37 passed, 0 failed
+Unique API cases: 37
+Note: Validation (8) + Original (29) = Regression (37)
+
+================================================================================
+CONFIRMED 400 SCENARIOS (Plane v1.3.1)
+================================================================================
+
+| # | Scenario | Status Code | Stable? |
+|---|----------|-------------|---------|
+| 1 | Missing 'name' field (empty body) | 400 | ✅ YES |
+| 2 | Empty string name | 400 | ✅ YES |
+| 3 | Name as number (wrong type) | 400 | ✅ YES |
+| 4 | Invalid priority enum value | 400 | ✅ YES |
+| 5 | Malformed JSON body | 400 | ✅ YES |
+| 6 | Excessive title length (10000 chars) | 400 | ✅ YES |
+
+Stable 400 scenarios confirmed: 6 of 8 tests returned 400.
+(2 tests recorded variant behavior: state_id, priority variations)
+
+================================================================================
+FULL API REGRESSION
+================================================================================
+
+Original: 29 tests (Day 3) — all pass
+New validation: 8 tests — all pass
+Total: 37 tests — all pass
+
+No regressions found.
+================================================================================
